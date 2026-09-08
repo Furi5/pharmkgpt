@@ -1,0 +1,27 @@
+22815080|t|APOE genotype in the diagnosis of Alzheimer's disease in patients with cognitive impairment.
+22815080|a|BACKGROUND: Although an association between the apolipoprotein E (APOE) epsilon4 allele and increased risk of Alzheimer's disease (AD) is established, the utility of APOE genotyping in the clinical diagnosis of AD is still under investigation. METHODS: Medical records of 89 patients with cognitive impairment and APOE genotype data underwent a retrospective review. RESULTS: Comparison of age, age at onset, education, Mini-Mental State Examination, months of follow-up, and family history of dementia did not reveal statistical difference among the patients with different APOE genotypes. The APOE epsilon4 carriers had a higher percentage of AD diagnoses after a median 16 months follow-up than non-APOE epsilon4 carriers. The APOE epsilon4 designation had a high sensitivity and high positive predictive value for the diagnosis of AD but a low negative predictive value and specificity. CONCLUSIONS: The APOE genotyping may be helpful in diagnosing AD especially in patients presenting with atypical features or early age of onset of dementia.
+22815080	0	4	APOE	Gene	348
+22815080	34	53	Alzheimer's disease	Disease	MESH:D000544
+22815080	57	65	patients	Species	9606
+22815080	71	91	cognitive impairment	Disease	MESH:D003072
+22815080	141	157	apolipoprotein E	Gene	348
+22815080	159	163	APOE	Gene	348
+22815080	203	222	Alzheimer's disease	Disease	MESH:D000544
+22815080	224	226	AD	Disease	MESH:D000544
+22815080	259	263	APOE	Gene	348
+22815080	304	306	AD	Disease	MESH:D000544
+22815080	368	376	patients	Species	9606
+22815080	382	402	cognitive impairment	Disease	MESH:D003072
+22815080	407	411	APOE	Gene	348
+22815080	587	595	dementia	Disease	MESH:D003704
+22815080	644	652	patients	Species	9606
+22815080	668	672	APOE	Gene	348
+22815080	738	740	AD	Disease	MESH:D000544
+22815080	928	930	AD	Disease	MESH:D000544
+22815080	1001	1005	APOE	Gene	348
+22815080	1046	1048	AD	Disease	MESH:D000544
+22815080	1063	1071	patients	Species	9606
+22815080	1131	1139	dementia	Disease	MESH:D003704
+22815080	Association	MESH:D003072	348
+22815080	Association	MESH:D000544	348
+

@@ -1,0 +1,7 @@
+# Construction-only environment, tested with Python 3.11.
+langchain==0.3.27
+langchain-core==0.3.72
+langchain-ollama==0.3.6
+numpy==2.2.6
+pydantic==2.11.7
+scikit-learn==1.7.1

@@ -26,6 +26,7 @@ To combat the issue of large language model "hallucinations" in specialized fiel
     *   [2.2 Local (Conda)](#21-local-conda)
 3.  [Test](#3-test)
 4.  [Data Version History](#4-data-version-history)
+5.  [KG Construction Source Code](#kg-construction-source-code)
 
 ## 1. Prerequisites
 
@@ -124,6 +125,11 @@ Choose either Docker or Local setup.
         ```
     *(Optional: Mention `run.py` here if it provides a distinct, important way to interact, e.g., "For single-script execution or specific tasks, you might use `run.py` [add brief explanation if needed].")*
 
+## KG construction source code
+
+See [kg_construction/README.md](kg_construction/README.md) for the construction
+source, dependencies, sample input and run commands.
+
 ## Running Tests
 
 To run the automated tests:
@@ -134,4 +140,3 @@ To run the automated tests:
     ```bash
     pytest test/test_QA.py
     ```
-

@@ -1,0 +1,120 @@
+{
+  "pmid22815080": {
+    "entities": [
+      {
+        "name": "alzheimer's disease",
+        "label": "disease",
+        "properties_info": {
+          "unique_id": "MESH:D000544"
+        }
+      },
+      {
+        "name": "cognitive impairment",
+        "label": "disease",
+        "properties_info": {
+          "unique_id": "MESH:D003072"
+        }
+      },
+      {
+        "name": "dementia",
+        "label": "disease",
+        "properties_info": {
+          "unique_id": "MESH:D003704"
+        }
+      },
+      {
+        "name": "apolipoprotein e",
+        "label": "gene",
+        "properties_info": {
+          "unique_id": "Gene ID:348"
+        }
+      },
+      {
+        "name": "pmid22815080",
+        "label": "abstract",
+        "properties_info": {
+          "context": "Title: APOE genotype in the diagnosis of Alzheimer's disease in patients with cognitive impairment. Abstract: BACKGROUND: Although an association between the apolipoprotein E (APOE) epsilon4 allele and increased risk of Alzheimer's disease (AD) is established, the utility of APOE genotyping in the clinical diagnosis of AD is still under investigation. METHODS: Medical records of 89 patients with cognitive impairment and APOE genotype data underwent a retrospective review. RESULTS: Comparison of age, age at onset, education, Mini-Mental State Examination, months of follow-up, and family history of dementia did not reveal statistical difference among the patients with different APOE genotypes. The APOE epsilon4 carriers had a higher percentage of AD diagnoses after a median 16 months follow-up than non-APOE epsilon4 carriers. The APOE epsilon4 designation had a high sensitivity and high positive predictive value for the diagnosis of AD but a low negative predictive value and specificity. CONCLUSIONS: The APOE genotyping may be helpful in diagnosing AD especially in patients presenting with atypical features or early age of onset of dementia."
+        }
+      }
+    ],
+    "relations": [
+      {
+        "startEntity": "apolipoprotein e",
+        "endEntity": "alzheimer's disease",
+        "name": "genotype_associated_with",
+        "properties_info": {
+          "source": "PMID22815080",
+          "species": "9606"
+        }
+      },
+      {
+        "startEntity": "cognitive impairment",
+        "endEntity": "alzheimer's disease",
+        "name": "presents_as",
+        "properties_info": {
+          "source": "PMID22815080",
+          "species": "9606"
+        }
+      },
+      {
+        "startEntity": "alzheimer's disease",
+        "endEntity": "dementia",
+        "name": "is_a_type_of",
+        "properties_info": {
+          "source": "PMID22815080",
+          "species": "9606"
+        }
+      },
+      {
+        "startEntity": "alzheimer's disease",
+        "endEntity": "apolipoprotein e",
+        "name": "is_synonym_for",
+        "properties_info": {
+          "source": "PMID22815080",
+          "species": "9606"
+        }
+      },
+      {
+        "startEntity": "alzheimer's disease",
+        "endEntity": "cognitive impairment",
+        "name": "is_synonym_for",
+        "properties_info": {
+          "source": "PMID22815080",
+          "species": "9606"
+        }
+      },
+      {
+        "startEntity": "pmid22815080",
+        "endEntity": "alzheimer's disease",
+        "name": "reported",
+        "properties_info": {
+          "source": "PMID22815080"
+        }
+      },
+      {
+        "startEntity": "pmid22815080",
+        "endEntity": "apolipoprotein e",
+        "name": "reported",
+        "properties_info": {
+          "source": "PMID22815080"
+        }
+      },
+      {
+        "startEntity": "pmid22815080",
+        "endEntity": "cognitive impairment",
+        "name": "reported",
+        "properties_info": {
+          "source": "PMID22815080"
+        }
+      },
+      {
+        "startEntity": "pmid22815080",
+        "endEntity": "dementia",
+        "name": "reported",
+        "properties_info": {
+          "source": "PMID22815080"
+        }
+      }
+    ]
+  }
+}

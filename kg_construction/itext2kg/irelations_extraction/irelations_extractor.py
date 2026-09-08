@@ -1,0 +1,315 @@
+# PharmKGPT local release adaptation, 2026-09-08. See kg_construction/SOURCE_NOTES.md.
+from typing import List
+import logging
+from ..utils import LangchainOutputParser, RelationshipsExtractor, Matcher
+from ..models import Entity, Relationship, KnowledgeGraph
+
+class iRelationsExtractor:
+    """
+    A class to extract relationships between entities
+    """
+    def __init__(self, llm_model, embeddings_model, sleep_time:int=5) -> None:
+        """
+        Initializes the iRelationsExtractor with specified language model, embeddings model, and operational parameters.
+        
+        Args:
+        llm_model: The language model instance used for extracting relationships between entities.
+        embeddings_model: The embeddings model instance used for generating vector representations of entities and relationships.
+        sleep_time (int): The time to wait (in seconds) when encountering rate limits or errors. Defaults to 5 seconds.
+        """
+        self.langchain_output_parser =  LangchainOutputParser(llm_model=llm_model,
+                                                              embeddings_model=embeddings_model,
+                                                       sleep_time=sleep_time)
+        self.matcher = Matcher()
+
+
+    def extract_relations(self,
+                          context: str,
+                          entities: List[Entity],
+                          isolated_entities_without_relations: List[Entity] = None,
+                          max_tries:int=5,
+                          entity_name_weight:float=0.6,
+                          entity_label_weight:float=0.4,
+                          ) -> List[Relationship]:
+        """
+        Extract relationships from a given context for specified entities and add embeddings. This method handles the invented entities.
+        
+        Args:
+            context (str): The textual context from which relationships will be extracted.
+            entities (List[Entity]): A list of Entity instances to be considered in the extraction.
+            isolated_entities_without_relations (List[Entity], optional): A list of entities without existing relationships to include in the extraction. Defaults to None.
+            max_tries (int): The maximum number of attempts to extract relationships. Defaults to 5.
+            entity_name_weight (float): The weight of the entity name, set to 0.6, indicating its
+                                     relative importance in the overall evaluation process.
+            entity_label_weight (float): The weight of the entity label, set to 0.4, reflecting its
+                                      secondary significance in the evaluation process.
+        
+        Returns:
+            List[Relationship]: A list of extracted Relationship instances with embeddings.
+        
+        Raises:
+            ValueError: If relationship extraction fails after multiple attempts.
+        """
+        # we would not give the LLM complex data structure as context to avoid the hallucination as much as possible
+
+        # entities_simplified = [(entity.name, entity.label) for entity in entities]
+        entities_simplified = [f"entity(name={entity.name},label={entity.label})" for entity in entities]
+        formatted_context = f"entities\n'{'/n'.join(entities_simplified)}'\n context:\n'{context}'"
+        # IE_query = '''# Directives
+        #                 - Extract relationships between the provided entities based on the context.
+        #                 - identify all pairs of (startNode, EndNode) that are *clearly related* to each other.
+        #                 - relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+        #                 - Adhere completely to the provided entities list.
+        #                 - Do not change the name or label of the provided entities list.
+        #                 - Do not add any entity outside the provided list.
+        #                 - Avoid reflexive relations.
+        #                 '''
+        IE_query = '''
+        You are tasked with extracting relationships from given content and 
+        structure them into Entity and Relationship objects. Here's the outline of what 
+        you need to do:
+
+        Content Extraction:
+        You should be able to process the input content and understand the entities 
+        provided below.
+        Entities are already identified for you — your task is to use these entities 
+        only to extract relationships.
+
+        Relationship Extraction:
+        You should identify relationships between the given nodes (Entities) based on the content.
+        For each relationship, create a Relationship object.
+        A Relationship object should have a startNode (startNode) and an end node (endNode) which 
+        are Entity objects representing the entities involved in the relationship.
+        Each relationship should also have a name (name), and additional properties if 
+        applicable (though typically just the name is needed based on the example).
+
+        Important:
+        All provided entities must be included in at least one relationship. Do not leave 
+        any entity unused.
+
+        Output Formatting:
+        The extracted relationships should be formatted as instances of the 
+        provided Relationship class, referencing the given Entity definitions for startNode and endNode.
+        Ensure that the extracted data adheres to the structure defined by the classes.
+        Output the structured data in a format that can be easily validated against 
+        the provided code.
+        Do not wrap the output in lists or dictionaries, provide only the 
+        Relationship objects with unique identifiers if applicable (though the example doesn't show unique IDs for relationships themselves).
+        Strictly follow the format provided in the example output, do not add any 
+        additional information.
+
+        Instructions for you:
+        Read the provided content and entities thoroughly.
+        Determine relationships between these entities and represent them as directed 
+        relationships.
+        Provide only the extracted relationships in the specified format below.
+
+        Example Content:
+        "TNF-alpha plays a central role in the neuroinflammation observed in Alzheimer’s Disease. 
+        Anti-TNF therapies have shown potential to reduce delirium symptoms in elderly patients."
+
+        Entities:
+        Entity(name='TNF-alpha', label='protein')
+        Entity(name='Alzheimer's Disease', label='disease')
+        Entity(name='delirium', label='disease')
+        Entity(name='Anti-TNF therapy', label='chemical')
+
+        Expected Output:
+        Relationships:
+        Relationship(startNode=Entity(name='TNF-alpha', label='protein'), endNode=Entity(name='Alzheimer's Disease', label='disease'), name='upregulates')
+        Relationship(startNode=Entity(name='Anti-TNF therapy', label='chemical'), endNode=Entity(name='delirium', label='disease'), name='treats')
+        '''
+
+
+        if isolated_entities_without_relations:
+            isolated_entities_without_relations_simplified = [(entity.name, entity.label) for entity in isolated_entities_without_relations]
+            formatted_context = f"context :'{context}'"
+            IE_query = f'''
+                    # Directives
+                    - Based on the provided context, link the entities: \n {isolated_entities_without_relations_simplified} \n to the following entities: \n {entities_simplified}.
+                    - Avoid reflexive relations.
+                    '''
+        tries = 0
+        relationships = None
+        curated_relationships:List[Relationship]= []
+
+        while tries < max_tries:
+            try:
+                relationships = self.langchain_output_parser.extract_information_as_json_for_context(
+                    context=formatted_context, output_data_structure=RelationshipsExtractor,
+                    IE_query=IE_query
+                )
+
+                if relationships and "relationships" in relationships.keys():
+                    break
+
+            except Exception as e:
+                logging.info(f"Not Formatted in the desired format. Error occurred: {e}. Retrying... (Attempt {tries + 1}/{max_tries})")
+
+            tries += 1
+
+        if not relationships or "relationships" not in relationships:
+            raise ValueError("Failed to extract relationships after multiple attempts.")
+        logging.info(relationships)
+        kg_llm_output = KnowledgeGraph(relationships=[], entities = entities)
+
+        # -------- Verification of invented entities and matching to the closest ones from the input entities-------- #
+
+        logging.info("[INFO] Verification of invented entities")
+
+
+        # for entity in entities:
+        #     if entity.label == "abstract":
+        #         abstract_dis = {"startNode": {}, "endNode": {}, "name": "reported"}
+        #         abstract_dis["startNode"] = {"label": entity.label, "name": entity}
+        #         for disease in entities:
+        #             if disease.label == "disease":
+        #                 abstract_dis["endNode"] = {"label": disease.label, "name": disease}
+        #                 relationships["relationships"].append(abstract_dis.copy())
+        #                 abstract_dis["endNode"] = {}
+
+
+        for relationship in relationships["relationships"]:
+            if self.process_relationship(relationship) == False:
+                continue
+
+            elif relationship["startNode"]["label"]=='abstract' and isinstance(relationship["startNode"]["name"],Entity):
+                # logging.info("add abstract relationship")
+                # logging.info(isinstance(relationship["startNode"]["name"],Entity))
+                # logging.info(isinstance(relationship["endNode"]["name"],Entity))
+                startEntity = relationship["startNode"]["name"]
+                endEntity = relationship["endNode"]["name"]
+                curated_relationships.append(Relationship(startEntity= startEntity,
+                    endEntity = endEntity,
+                    name = relationship["name"]))
+            else:
+                startEntity = Entity(label=relationship["startNode"]["label"], name = relationship["startNode"]["name"])
+                endEntity = Entity(label=relationship["endNode"]["label"], name = relationship["endNode"]["name"])
+
+                startEntity.process()
+                endEntity.process()
+
+                startEntity_in_input_entities = kg_llm_output.get_entity(startEntity)
+                endEntity_in_input_entities = kg_llm_output.get_entity(endEntity)
+
+                if startEntity_in_input_entities is not None and endEntity_in_input_entities is not None :
+                    curated_relationships.append(Relationship(startEntity= startEntity_in_input_entities,
+                                        endEntity = endEntity_in_input_entities,
+                                        name = relationship["name"]))
+
+                elif startEntity_in_input_entities is None and endEntity_in_input_entities is None:
+                    # logging.info(f"[INFO][INVENTED ENTITIES] Aie; the entities {startEntity} and {endEntity} are invented. Solving them ...")
+                    startEntity.embed_Entity(embeddings_function=self.langchain_output_parser.calculate_embeddings,
+                                            entity_label_weight=entity_label_weight,
+                                            entity_name_weight=entity_name_weight)
+                    endEntity.embed_Entity(embeddings_function=self.langchain_output_parser.calculate_embeddings,
+                                        entity_label_weight=entity_label_weight,
+                                        entity_name_weight=entity_name_weight)
+
+                    startEntity = self.matcher.find_match(obj1=startEntity, list_objects=entities, threshold=0.99)
+                    endEntity = self.matcher.find_match(obj1=endEntity, list_objects=entities, threshold=0.99)
+
+                    curated_relationships.append(Relationship(startEntity= startEntity,
+                                        endEntity = endEntity,
+                                        name = relationship["name"]))
+
+                elif startEntity_in_input_entities is None:
+                    # logging.info(f"[INFO][INVENTED ENTITIES] Aie; the entities {startEntity} is invented. Solving it ...")
+                    startEntity.embed_Entity(embeddings_function=self.langchain_output_parser.calculate_embeddings,
+                                            entity_label_weight=entity_label_weight,
+                                            entity_name_weight=entity_name_weight)
+                    startEntity = self.matcher.find_match(obj1=startEntity, list_objects=entities, threshold=0.9)
+
+                    curated_relationships.append(Relationship(startEntity= startEntity,
+                                        endEntity = endEntity,
+                                        name = relationship["name"]))
+
+                elif endEntity_in_input_entities is None:
+                    # logging.info(f"[INFO][INVENTED ENTITIES] Aie; the entities {endEntity} is invented. Solving it ...")
+                    endEntity.embed_Entity(embeddings_function=self.langchain_output_parser.calculate_embeddings,
+                                        entity_label_weight=entity_label_weight,
+                                        entity_name_weight=entity_name_weight)
+                    endEntity = self.matcher.find_match(obj1=endEntity, list_objects=entities, threshold=0.9)
+
+                    curated_relationships.append(Relationship(startEntity= startEntity,
+                                        endEntity = endEntity,
+                                        name = relationship["name"]))
+
+        kg = KnowledgeGraph(relationships = curated_relationships, entities=entities)
+        kg.embed_relationships(
+            embeddings_function=lambda x:self.langchain_output_parser.calculate_embeddings(x)
+            )
+        return kg.relationships
+
+
+    def extract_verify_and_correct_relations(self,
+                          context: str,
+                          entities: List[Entity],
+                          source:str=None,
+                          rel_threshold:float = 0.7,
+                          max_tries:int=5,
+                          max_tries_isolated_entities:int=3,
+                          entity_name_weight:float=0.6,
+                          entity_label_weight:float=0.4) -> List[Relationship]:
+        """
+        Extract, verify, and correct relationships between entities in the given context.
+
+        Args:
+            context (str): The textual context for extracting relationships.
+            entities (List[Entity]): A list of Entity instances to consider.
+            rel_threshold (float): The threshold for matching corrected relationships. Defaults to 0.7.
+            max_tries (int): The maximum number of attempts to extract relationships. Defaults to 5.
+            max_tries_isolated_entities (int): The maximum number of attempts to process isolated entities. Defaults to 3.
+            entity_name_weight (float): The weight of the entity name, set to 0.6, indicating its
+                                     relative importance in the overall evaluation process.
+            entity_label_weight (float): The weight of the entity label, set to 0.4, reflecting its
+                                      secondary significance in the evaluation process.
+        
+        Returns:
+            List[Relationship]: A list of curated Relationship instances after verification and correction.
+        """
+        tries = 0
+        isolated_entities_without_relations:List[Entity]= []
+        curated_relationships = self.extract_relations(context=context,
+                                                   entities=entities,
+                                                   max_tries=max_tries,
+                                                   entity_name_weight=entity_name_weight,
+                                                   entity_label_weight=entity_label_weight)
+
+        # -------- Verification of isolated entities without relations and re-prompting the LLM accordingly-------- #
+        isolated_entities_without_relations = KnowledgeGraph(entities=entities,
+                                                             relationships=curated_relationships).find_isolated_entities()
+
+        while tries < max_tries_isolated_entities and isolated_entities_without_relations:
+            # logging.info(f"[INFO][ISOLATED ENTITIES][TRY-{tries+1}] Aie; there are some isolated entities without relations {isolated_entities_without_relations}. Solving them ...")
+            corrected_relationships = self.extract_relations(context = context,
+                                entities=entities,
+                                isolated_entities_without_relations=isolated_entities_without_relations,
+                                entity_name_weight=entity_name_weight,
+                                entity_label_weight=entity_label_weight)
+            matched_corrected_relationships, _ = self.matcher.process_lists(list1 = corrected_relationships, list2=curated_relationships, threshold=rel_threshold)
+            curated_relationships.extend(matched_corrected_relationships)
+
+            isolated_entities_without_relations = KnowledgeGraph(entities=entities, relationships=corrected_relationships).find_isolated_entities()
+            tries += 1
+
+        # 为关系添加来源信息
+        for i in range(len(curated_relationships)):
+            curated_relationships[i].properties_info = source
+
+        return curated_relationships
+
+    def process_relationship(self, relationship):
+        if not isinstance(relationship, dict):
+            return False
+        expected_relationship_keys = {"startNode", "endNode", "name"}
+        if set(relationship.keys()) != expected_relationship_keys:
+            return False
+        if not isinstance(relationship["startNode"], dict) or not isinstance(relationship["endNode"], dict):
+            return False
+
+        expected_node_keys = {"label", "name"}
+        if set(relationship["startNode"].keys()) != expected_node_keys or \
+           set(relationship["endNode"].keys()) != expected_node_keys:
+            return False
+        return True
