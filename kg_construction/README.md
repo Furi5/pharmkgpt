@@ -10,13 +10,12 @@ Python 3.11 and a running Ollama service are required for model inference.
 
 ```sh
 python -m pip install -r kg_construction/requirements.txt
-ollama pull deepseek-r1:32b
+ollama pull gemma3:27b
 ollama pull nomic-embed-text:latest
 
 python kg_construction/build.py \
   --input kg_construction/examples/22815080.txt \
-  --output-dir /tmp/pharmkgpt-kg \
-  --reasoning
+  --output-dir /tmp/pharmkgpt-kg
 ```
 
 `--input` accepts a PubTator file or directory. Files need matching
@@ -50,9 +49,9 @@ use the application's KG schemas; RAG vector indexes are not generated.
 
 ## Offline example and tests
 
-The PMID 22815080 example contains recorded DeepSeek responses and a reference
-KG: 4 biomedical entities and 5 relations, plus one article node and 4 provenance
-links. Replay uses these responses without model inference.
+The recorded DeepSeek-R1 trace is provided only as an offline regression fixture
+for testing the construction pipeline; the KG construction configuration used
+in the study employed Gemma3-27B.
 
 ```sh
 python kg_construction/build.py \

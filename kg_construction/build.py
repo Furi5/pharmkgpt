@@ -172,7 +172,7 @@ def main():
     parser.add_argument("--input", required=True, type=Path, help="PubTator file or directory")
     parser.add_argument("--output-dir", required=True, type=Path, help="New, non-existing directory")
     parser.add_argument("--limit", type=positive, default=1, help="Number of documents (default: 1)")
-    parser.add_argument("--model", default="deepseek-r1:32b")
+    parser.add_argument("--model", default="gemma3:27b")
     parser.add_argument("--embedding-model", default="nomic-embed-text:latest")
     parser.add_argument("--base-url", default="http://localhost:11434")
     parser.add_argument("--timeout", type=positive, default=300)

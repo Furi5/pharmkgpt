@@ -61,11 +61,14 @@ tar -zxvf bge-reranker-large.tar.gz
 
 ### 1.3 Prepare Data
 
+The data archive supporting the study is publicly available through
+[Figshare](https://doi.org/10.6084/m9.figshare.33465691).
+
+After downloading the archive:
+
 ```sh
-# Extract the delirium data (latest version)
 tar -zxvf Data_v7_0509.tar.gz
 ```
-*Use `Data_v7_0509` for the full dataset*
 
 ## 2. Setup & Run
 
