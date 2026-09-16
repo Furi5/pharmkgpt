@@ -1,0 +1,33 @@
+{
+  "retrieval": {
+    "evaluation": "retrieval-only gold PMID ranking",
+    "candidate_k": 20,
+    "final_k": 10,
+    "semantic_search_k": 20,
+    "hops": 1,
+    "similarity_cutoff": 0.5,
+    "embed_model": "nomic-embed-text:latest",
+    "generation_model": null,
+    "deterministic_hash_seed": "0"
+  },
+  "answer_perturbation": {
+    "model_type": "gemma3",
+    "generator_model": "gemma3:27b",
+    "embedding_model": "nomic-embed-text:0a109f422b47",
+    "top_k": 10,
+    "semantic_document_candidates": 20,
+    "mixed_index_candidates_for_document_filter": 1000,
+    "hops": 1,
+    "temperature": 0,
+    "seed": 0,
+    "context_window": 4096,
+    "max_generated_tokens": 128,
+    "fixed_denominator": true,
+    "query_failures_count_as_incorrect": true,
+    "unparseable_answers_count_as_incorrect": true,
+    "reranker": "bge-reranker-large"
+  },
+  "benchmark": "../data/benchmark.json",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20260805
+}

@@ -1,0 +1,8 @@
+Configuration,KG Retrieve,Graph Filter,Reranker,PubTator-linked entities,Recall@1 (%),Recall@5 (%),Recall@10 (%),MRR@10 (%)
+Full Model,1,1,1,1,90.14,96.56,97.13,92.74
+w/o KG Retrieve,0,1,1,1,89.38,95.5,96.08,91.86
+w/o Graph Filter,1,0,1,1,90.14,96.46,96.94,92.71
+w/o Reranker,1,1,0,1,71.2,89.67,94.07,79.11
+w/o PubTator-linked entities,1,1,1,0,88.8,95.12,95.69,91.36
+Semantic-only + Reranker,0,0,1,NA,89.38,95.5,95.98,91.85
+Semantic-only,0,0,0,NA,71.29,89.28,93.3,79.07

@@ -1,0 +1,56 @@
+{
+  "experiment": "closed_models",
+  "status": "formal_comparison_complete",
+  "benchmark": {
+    "path": "../data/benchmark.json",
+    "sha256": "f14546ecdc81c843a5fda5a15ea7521a624997aaec20b94026e21b4fad91381c",
+    "questions": 1045,
+    "corpus": null,
+    "retrieval": null,
+    "task": "closed-book multiple-choice QA"
+  },
+  "prompt": {
+    "system_path": "prompts/system.txt",
+    "user_path": "prompts/user.txt",
+    "identical_across_models": true
+  },
+  "models": {
+    "openai": {
+      "display_name": "GPT-5.2",
+      "model_id": "gpt-5.2-2025-12-11",
+      "model_version": "2025-12-11 snapshot",
+      "provider_commit": null,
+      "provider_commit_reason": "Closed provider API; no source commit is published for the model snapshot.",
+      "endpoint": "https://api.openai.com/v1/responses",
+      "api": "Responses API",
+      "temperature": 0,
+      "top_p": 1,
+      "seed": null,
+      "seed_reason": "The Responses API configuration used here does not expose a seed parameter for GPT-5.2.",
+      "max_output_tokens": 512,
+      "reasoning_effort": "none",
+      "verbosity": "low"
+    },
+    "gemini": {
+      "display_name": "Gemini 3.1 Pro Preview",
+      "model_id": "gemini-3.1-pro-preview",
+      "model_version": "provider preview alias; effective model ID is recorded from each response",
+      "provider_commit": null,
+      "provider_commit_reason": "Closed provider API; Google does not publish a source commit or immutable snapshot for this preview alias.",
+      "api": "Gemini GenerateContent API v1beta",
+      "temperature": 1.0,
+      "temperature_reason": "Google strongly recommends the default temperature 1.0 for Gemini 3 models.",
+      "top_p": 1,
+      "seed": 42,
+      "max_output_tokens": 512,
+      "thinking_level": "low",
+      "thinking_level_reason": "Gemini 3.1 Pro cannot disable thinking; low is its least intensive supported level."
+    }
+  },
+  "metrics": [
+    "answer_accuracy",
+    "answer_parse_coverage",
+    "wilson_95ci",
+    "exact_mcnemar"
+  ]
+}

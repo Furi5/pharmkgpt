@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "evaluation": "PubMedQA PQA-L expert-labeled subset",
+  "model_control": "deepseek-r1:32b for all three arms",
+  "questions": 1000,
+  "arms": {
+    "closed_book": {
+      "display_name": "DeepSeek (closed-book)",
+      "evidence_setting": "No external evidence",
+      "questions_evaluated": 1000,
+      "correct_answers": 144,
+      "answer_accuracy": 0.144,
+      "answer_accuracy_95ci_wilson": [
+        0.1236009499120135,
+        0.16712370212970176
+      ],
+      "macro_f1": 0.11438087107286869,
+      "unknown_outputs": 0,
+      "api_error_outputs": 0,
+      "source_articles_successfully_indexed_as_kgs": null,
+      "kg_construction_or_parsing_failures": null,
+      "exact_source_recall_at_k": null,
+      "mrr": null,
+      "retrieval_metric_type": "not_applicable_no_retrieval"
+    },
+    "pharmkgpt_retrieval": {
+      "display_name": "DeepSeek + PharmKGPT",
+      "evidence_setting": "Frozen PharmKGPT Top-10 retrieval",
+      "questions_evaluated": 1000,
+      "correct_answers": 540,
+      "answer_accuracy": 0.54,
+      "answer_accuracy_95ci_wilson": [
+        0.5090152862022621,
+        0.5706785731188935
+      ],
+      "macro_f1": 0.508878409360655,
+      "unknown_outputs": 0,
+      "api_error_outputs": 0,
+      "source_articles_successfully_indexed_as_kgs": 995,
+      "kg_construction_or_parsing_failures": 5,
+      "exact_source_recall_at_k": {
+        "1": 0.635,
+        "2": 0.739,
+        "5": 0.845,
+        "10": 0.882
+      },
+      "mrr": 0.7220781746031746,
+      "retrieval_metric_type": "observed"
+    },
+    "gold": {
+      "display_name": "DeepSeek + Gold",
+      "evidence_setting": "Oracle PubMedQA gold context",
+      "questions_evaluated": 1000,
+      "correct_answers": 644,
+      "answer_accuracy": 0.644,
+      "answer_accuracy_95ci_wilson": [
+        0.6138239300340224,
+        0.6730739635221378
+      ],
+      "macro_f1": 0.5737022779368056,
+      "unknown_outputs": 0,
+      "api_error_outputs": 0,
+      "source_articles_successfully_indexed_as_kgs": null,
+      "kg_construction_or_parsing_failures": null,
+      "exact_source_recall_at_k": {
+        "1": 1.0,
+        "2": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr": 1.0,
+      "retrieval_metric_type": "oracle_by_definition_not_observed_retrieval"
+    }
+  },
+  "pharmkgpt_missing_kg_pmids": [
+    "11867487",
+    "12006913",
+    "15879722",
+    "16956164",
+    "19131405"
+  ],
+  "notes": [
+    "Only the supplied evidence differs across arms; model and inference settings are fixed.",
+    "Closed-book has no retrieval, so Recall@K and MRR are not applicable.",
+    "Gold context is supplied directly; its 100% Recall@K and MRR=1 are oracle definitions, not measured retriever performance.",
+    "All 1,000 questions remain in the answer denominator, including the five source articles without a parsed KG."
+  ]
+}

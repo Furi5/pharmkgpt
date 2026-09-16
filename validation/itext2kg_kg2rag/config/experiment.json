@@ -1,0 +1,41 @@
+{
+  "experiment": "iText2KG + KG2RAG",
+  "benchmark": "../data/benchmark.json",
+  "expected_documents": 5059,
+  "expected_questions": 1045,
+  "construction": {
+    "provider": "deepseek",
+    "chat_model": "deepseek-v4-flash",
+    "thinking": "disabled",
+    "embedding_model": "nomic-embed-text:0a109f422b47",
+    "embedding_model_digest": "27c67d13638d12f76f3e6b26f2dc311609d6466d192d8e44fa4b580dcc635eb2",
+    "temperature": 0,
+    "entity_threshold": 0.7,
+    "relation_threshold": 0.7,
+    "max_tries": 5,
+    "max_tries_isolated_entities": 3,
+    "document_attempts": 3,
+    "pubtator_annotations_used": false,
+    "custom_biomedical_prompts_used": false,
+    "biomedical_ontology_used": false
+  },
+  "retrieval": {
+    "embedding_model": "nomic-embed-text:0a109f422b47",
+    "semantic_seed_k": 10,
+    "kg_hops": 1,
+    "final_top_k": 10,
+    "reranker": "bge-reranker-large",
+    "reranker_max_length": 512,
+    "reranker_input_char_limit": 8192,
+    "reranker_device": "mps",
+    "max_entity_document_frequency": 2
+  },
+  "answer": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "thinking": "disabled",
+    "temperature": 0,
+    "max_tokens": 16,
+    "runs": 5
+  }
+}

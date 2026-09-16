@@ -1,0 +1,59 @@
+{
+  "baseline_source_directory": "plot/recall/data",
+  "corrected_full_source": "kg_ablation/results/corrected_retrieval/retrieval_only_ablation_results_corrected.json",
+  "corrected_full_configuration": "Full Model",
+  "endpoint": "exact-source Recall@K against the designated gold PMID",
+  "domains": [
+    "Overall",
+    "Clinical",
+    "Genetic",
+    "Cell",
+    "Pathway",
+    "Metabolism"
+  ],
+  "models": [
+    "LightRAG",
+    "HippoRAG2",
+    "SemanticRAG",
+    "PharmkGPT"
+  ],
+  "top_k_range": [
+    1,
+    10
+  ],
+  "run_count_per_model": {
+    "LightRAG": 5,
+    "HippoRAG2": 5,
+    "SemanticRAG": 5,
+    "PharmkGPT": 1
+  },
+  "question_counts": {
+    "Overall": 1045,
+    "Clinical": 233,
+    "Genetic": 247,
+    "Cell": 213,
+    "Pathway": 230,
+    "Metabolism": 122
+  },
+  "input_sha256": {
+    "data/benchmark.json": "f14546ecdc81c843a5fda5a15ea7521a624997aaec20b94026e21b4fad91381c",
+    "plot/recall/data/lightrag_1.json": "2c846ee0f9338aa07fcd1d95442ac8e728ace6c4105fe1a61020fbb386a6e33c",
+    "plot/recall/data/lightrag_2.json": "2c846ee0f9338aa07fcd1d95442ac8e728ace6c4105fe1a61020fbb386a6e33c",
+    "plot/recall/data/lightrag_3.json": "2c846ee0f9338aa07fcd1d95442ac8e728ace6c4105fe1a61020fbb386a6e33c",
+    "plot/recall/data/lightrag_4.json": "2c846ee0f9338aa07fcd1d95442ac8e728ace6c4105fe1a61020fbb386a6e33c",
+    "plot/recall/data/lightrag_5.json": "c38c20880e84faf34ed7ecca965760790294a2cc541f49606d1c7f72a6732494",
+    "plot/recall/data/hipporag2_1.json": "d5fcb33ea32a3ef9edd45660e9ed4bc5eea01c06a9ee579b5fb58b028bc03db6",
+    "plot/recall/data/hipporag2_2.json": "30236fff91c97b1464aba4228641d86d5d090bcd0565564145de365804f8d3e9",
+    "plot/recall/data/hipporag2_3.json": "07ef0ee264c57a86b86f00a6931576df53a3cfb3846681253b0dfd0ff67b2c8f",
+    "plot/recall/data/hipporag2_4.json": "c2106e926d2825ddd7b8586f26b794a025f256049af3b509eba44382058c2621",
+    "plot/recall/data/hipporag2_5.json": "c56aeeebe3f901951cd2283b8a46cf4f458a9355ae11313487f5508982243a20",
+    "plot/recall/data/semanticrag_1.json": "0274c3b0b666efa8a212596c975039b6642b8950a260288540d62e4961b1311d",
+    "plot/recall/data/semanticrag_2.json": "c995dcf5e6bc80c49146ecf031e7c7b9112c03a647bb71659f099a15a1350720",
+    "plot/recall/data/semanticrag_3.json": "cb9ed236b075e4050fa47afa849295a716ded2a8bf84e53b98fcf4c26f32251f",
+    "plot/recall/data/semanticrag_4.json": "4107ed8af3bae0ebc95223defd932cd9078dcb99e7327559fca91b9b77ab65b3",
+    "plot/recall/data/semanticrag_5.json": "e1fcb2b81d0cccf145e74dfd2c4cdba33587094548676f1dafd8a1540b296fc2",
+    "kg_ablation/results/corrected_retrieval/retrieval_only_ablation_results_corrected.json": "e466b7ccce5c825811227c0cf1d59cd06d8e92ff3060bf1fc1db13f965cf7cfe"
+  },
+  "output_csv": "plot/recall/results/topk_hit_rates.csv",
+  "output_csv_sha256": "fba492d6179ee7f7332fa3e04e1688560b2ffe44ea0c3b404b8f38178c46e3c3"
+}

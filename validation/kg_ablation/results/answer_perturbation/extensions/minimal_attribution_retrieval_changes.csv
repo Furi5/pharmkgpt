@@ -1,0 +1,6 @@
+Reference,Variant,Interpretation,N,Ordered List Changed,PMID Set Changed,Context Count Changed,Mean Jaccard
+Full Model,w/o Graph Filtering,Graph filtering effect with KG expansion enabled,1045,1045,775,367,0.654124
+w/o Graph Filtering,Semantic-only + Reranker,Removing KG expansion with graph filtering disabled and fixed top-10,1045,326,326,1,0.875307
+Full Model,Semantic-only + Reranker (Matched Context Count),Complete KG-guided pathway effect at matched context count,1045,1045,835,1,0.626921
+w/o KG Expansion,Semantic-only + Reranker,Graph filtering effect without KG expansion,1045,1044,771,330,0.674074
+Semantic-only + Reranker,Semantic-only + Reranker (Matched Context Count),Context-count control within semantic-only retrieval,1045,367,367,367,0.840096

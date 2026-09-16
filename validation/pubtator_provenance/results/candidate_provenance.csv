@@ -1,0 +1,5 @@
+stage,entity_provenance,n,percent,denominator
+candidate,shared_llm_pubtator,25526,24.9336,document-entity candidate occurrences
+candidate,pubtator_only,40419,39.4809,document-entity candidate occurrences
+candidate,llm_only,36431,35.5855,document-entity candidate occurrences
+candidate,total,102376,100.0,document-entity candidate occurrences

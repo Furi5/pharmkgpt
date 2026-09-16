@@ -1,0 +1,49 @@
+{
+  "configurations": {
+    "Full Model": {
+      "mrr@10": 0.9273972810814917,
+      "recall@1": 0.9014354066985646,
+      "recall@10": 0.9712918660287081,
+      "recall@5": 0.9655502392344497,
+      "total": 1045
+    },
+    "Full Model w/o all PubTator-linked entities": {
+      "mrr@10": 0.9135816814764184,
+      "recall@1": 0.8880382775119617,
+      "recall@10": 0.9569377990430622,
+      "recall@5": 0.9511961722488038,
+      "total": 1045
+    }
+  },
+  "evaluation": "retrieval-only exact gold PMID ranking",
+  "interpretation_guardrail": "The treatment removes both PubTator-only and shared LLM-PubTator entity occurrences. It is a strong deletion stress test, not a clean estimate of PubTator's unique contribution. No generated-answer accuracy is used because generation adds unrelated stochastic variance.",
+  "paired_analysis": {
+    "mrr@10": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "full_minus_without": 0.013815599605073288,
+      "paired_bootstrap_95_ci": [
+        0.005991360978203084,
+        0.02220862762968026
+      ]
+    },
+    "recall@1": {
+      "exact_mcnemar_p": 0.0025768280029296875,
+      "full_hit_without_miss": 17,
+      "full_minus_without": 0.013397129186602852,
+      "full_miss_without_hit": 3
+    },
+    "recall@10": {
+      "exact_mcnemar_p": 0.004077315330505371,
+      "full_hit_without_miss": 20,
+      "full_minus_without": 0.014354066985645897,
+      "full_miss_without_hit": 5
+    },
+    "recall@5": {
+      "exact_mcnemar_p": 0.0014896392822265625,
+      "full_hit_without_miss": 18,
+      "full_minus_without": 0.014354066985645897,
+      "full_miss_without_hit": 3
+    }
+  }
+}

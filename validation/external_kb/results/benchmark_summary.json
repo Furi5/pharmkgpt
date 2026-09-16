@@ -1,0 +1,21 @@
+{
+  "association_rows_all_strengths": 26,
+  "benchmark_items": 30,
+  "blind_input_excludes_answers_and_evidence": true,
+  "by_disease": {
+    "AD": {
+      "negative": 5,
+      "positive": 5,
+      "total": 10
+    },
+    "DELIRIUM": {
+      "negative": 10,
+      "positive": 10,
+      "total": 20
+    }
+  },
+  "label_policy": "curated_reference_labels_not_absolute_ground_truth",
+  "strong_association_rows": 15,
+  "weak_association_rows": 11,
+  "source_audit_file": "source_audit.json"
+}

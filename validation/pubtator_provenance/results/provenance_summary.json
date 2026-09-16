@@ -1,0 +1,66 @@
+{
+  "candidate_provenance": {
+    "llm_only": 36431,
+    "pubtator_only": 40419,
+    "shared_llm_pubtator": 25526
+  },
+  "configuration": {
+    "analysis_mode": "historical_prompt_rerun",
+    "model": "deepseek-r1:32b"
+  },
+  "coverage": {
+    "complete": true,
+    "documents_error": 0,
+    "documents_expected": 5059,
+    "documents_missing": 0,
+    "documents_successful": 5059,
+    "error_pmids_preview": [],
+    "missing_pmids_preview": []
+  },
+  "final_connected_provenance": {
+    "llm_only": 1514,
+    "pubtator_only": 24223,
+    "shared_llm_pubtator": 22965,
+    "unresolved": 1903
+  },
+  "limitations": [
+    "Historical pre-PubTator LLM outputs were not persisted; LLM provenance is reconstructed.",
+    "Surface normalization is retrospective and does not constitute recovered historical lineage.",
+    "The analysis is limited to the 5,059-document evaluation corpus."
+  ],
+  "pubtator_raw_annotation_mentions": {
+    "CellLine": 3026,
+    "Chemical": 34588,
+    "Chromosome": 113,
+    "DNAMutation": 354,
+    "Disease": 61124,
+    "Gene": 47548,
+    "ProteinMutation": 728,
+    "RefSeq": 3,
+    "SNP": 971,
+    "Species": 14940
+  },
+  "retention": {
+    "llm_only": {
+      "candidate_n": 36431,
+      "final_n": 1514,
+      "retention_percent": 4.1558
+    },
+    "pubtator_only": {
+      "candidate_n": 40419,
+      "final_n": 24223,
+      "retention_percent": 59.9297
+    },
+    "shared_llm_pubtator": {
+      "candidate_n": 25526,
+      "final_n": 22965,
+      "retention_percent": 89.9671
+    }
+  },
+  "scope": {
+    "candidate_definition": "normalized surface form within PMID",
+    "corpus": "curated_5059",
+    "final_definition": "non-abstract entity retained in existing connected document KG",
+    "unit": "document-entity occurrence"
+  }
+}

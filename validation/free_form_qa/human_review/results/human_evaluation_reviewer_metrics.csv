@@ -1,0 +1,5 @@
+reviewer,model,questions,mean_correctness_0_2,fully_correct_rate,mean_evidence_support_0_2,fully_supported_rate,preference_wins,ties
+Reviewer 1,PharmKGPT Full KG,100,1.68,0.75,1.67,0.77,32,52
+Reviewer 1,PharmKGPT Vanilla RAG,100,1.55,0.69,1.55,0.7,16,52
+Reviewer 2,PharmKGPT Full KG,100,1.75,0.81,1.74,0.81,17,75
+Reviewer 2,PharmKGPT Vanilla RAG,100,1.59,0.73,1.6,0.74,8,75

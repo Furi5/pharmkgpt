@@ -1,0 +1,16 @@
+{
+  "embed_model": "nomic-embed-text:0a109f422b47",
+  "full_retriever_top_k": 20,
+  "hops": 1,
+  "model_type": "gemma3",
+  "ollama_model": "gemma3:27b",
+  "question_count": 30,
+  "systems": [
+    "full",
+    "vanilla",
+    "raw_llm"
+  ],
+  "temperature": 0.0,
+  "top_k": 10,
+  "vanilla_retriever_top_k": 10
+}

@@ -1,0 +1,104 @@
+{
+  "system": "Official iText2KG v0.0.7 + pinned KG2RAG PubMed adapter",
+  "valid_for_reviewer_claim": true,
+  "expected_answer_runs": 5,
+  "retrieval": {
+    "evaluation_denominator": 1045,
+    "recall_at_1_hits": 763,
+    "recall_at_1": 0.7301435406698564,
+    "recall_at_1_95ci": [
+      0.7024238335313997,
+      0.7561774125909944
+    ],
+    "recall_at_5_hits": 942,
+    "recall_at_5": 0.9014354066985646,
+    "recall_at_5_95ci": [
+      0.8818659494718387,
+      0.9180642906460169
+    ],
+    "recall_at_10_hits": 970,
+    "recall_at_10": 0.9282296650717703,
+    "recall_at_10_95ci": [
+      0.9109622545449142,
+      0.9423602304437398
+    ],
+    "mrr": 0.8020650110123795,
+    "median_observed_rank": 1.0,
+    "questions_with_fewer_than_10_contexts": 23
+  },
+  "answers": {
+    "completed_run_count": 5,
+    "stored_rows": 5225,
+    "accuracy_mean": 0.9471770334928229,
+    "accuracy_sample_sd": 0.0004279555937798564,
+    "runs": [
+      {
+        "run": 1,
+        "rows": 1045,
+        "complete": true,
+        "parsed": 1045,
+        "parse_coverage": 1.0,
+        "correct": 990,
+        "accuracy": 0.9473684210526315,
+        "accuracy_95ci": [
+          0.9321171817825075,
+          0.9593426209710026
+        ]
+      },
+      {
+        "run": 2,
+        "rows": 1045,
+        "complete": true,
+        "parsed": 1045,
+        "parse_coverage": 1.0,
+        "correct": 990,
+        "accuracy": 0.9473684210526315,
+        "accuracy_95ci": [
+          0.9321171817825075,
+          0.9593426209710026
+        ]
+      },
+      {
+        "run": 3,
+        "rows": 1045,
+        "complete": true,
+        "parsed": 1045,
+        "parse_coverage": 1.0,
+        "correct": 990,
+        "accuracy": 0.9473684210526315,
+        "accuracy_95ci": [
+          0.9321171817825075,
+          0.9593426209710026
+        ]
+      },
+      {
+        "run": 4,
+        "rows": 1045,
+        "complete": true,
+        "parsed": 1045,
+        "parse_coverage": 1.0,
+        "correct": 989,
+        "accuracy": 0.9464114832535885,
+        "accuracy_95ci": [
+          0.9310495885837893,
+          0.958503348281478
+        ]
+      },
+      {
+        "run": 5,
+        "rows": 1045,
+        "complete": true,
+        "parsed": 1045,
+        "parse_coverage": 1.0,
+        "correct": 990,
+        "accuracy": 0.9473684210526315,
+        "accuracy_95ci": [
+          0.9321171817825075,
+          0.9593426209710026
+        ]
+      }
+    ]
+  },
+  "pubtator_annotations_used": false,
+  "custom_biomedical_prompts_used": false
+}

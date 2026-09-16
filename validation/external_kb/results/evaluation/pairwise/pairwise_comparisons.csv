@@ -1,0 +1,4 @@
+system_1,system_2,total,system_1_accuracy,system_2_accuracy,accuracy_difference,both_correct,system_1_only_correct,system_2_only_correct,both_wrong,paired_odds_ratio_haldane,mcnemar_exact_two_sided_p
+Full,Vanilla,30,0.5333333333333333,0.36666666666666664,0.16666666666666669,8,8,3,11,2.4285714285714284,0.2265625
+Full,RawLLM,30,0.5333333333333333,0.36666666666666664,0.16666666666666669,6,10,5,9,1.9090909090909092,0.3017578125
+Vanilla,RawLLM,30,0.36666666666666664,0.36666666666666664,0.0,6,5,5,14,1.0,1.0

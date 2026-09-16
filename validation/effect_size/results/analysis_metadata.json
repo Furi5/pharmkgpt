@@ -1,0 +1,15 @@
+{
+  "input": "data/all_answer.csv",
+  "input_sha256": "7acb70260cfc2a90540b006269eca7a1794a64a8b82244688ac679e95705794d",
+  "n_questions": 1045,
+  "runs_per_method": 5,
+  "accuracy_estimand": "Mean correctness across five runs and all questions.",
+  "pairing_unit": "Question",
+  "primary_effect_size": "Paired absolute accuracy difference",
+  "secondary_effect_size": "Relative error reduction",
+  "confidence_interval": "Nonparametric percentile bootstrap clustered by question",
+  "bootstrap_replicates": 20000,
+  "seed": 20260803,
+  "multiplicity": "Holm adjustment across eight PharmkGPT comparisons within each category",
+  "missing_response_policy": "Counted as incorrect"
+}

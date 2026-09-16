@@ -1,0 +1,58 @@
+{
+  "input_rows": 1045,
+  "duplicate_question_ids": 0,
+  "category_counts": {
+    "cell": 213,
+    "clinical": 233,
+    "genetic": 247,
+    "metabolism": 122,
+    "pathway": 230
+  },
+  "method_response_quality": {
+    "PharmkGPT": {
+      "missing_responses": 10,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "HippoRAG 2": {
+      "missing_responses": 0,
+      "invalid_nonmissing_responses": 71,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "SemanticRAG": {
+      "missing_responses": 0,
+      "invalid_nonmissing_responses": 21,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "LightRAG": {
+      "missing_responses": 0,
+      "invalid_nonmissing_responses": 593,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "Gemma3-27B": {
+      "missing_responses": 14,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "LLaMA3-8B": {
+      "missing_responses": 17,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "LLaMA2-13B": {
+      "missing_responses": 0,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "DeepSeek-32B": {
+      "missing_responses": 2,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    },
+    "Qwen-32B": {
+      "missing_responses": 11,
+      "invalid_nonmissing_responses": 0,
+      "scoring_rule": "Missing and invalid responses are counted as incorrect."
+    }
+  }
+}

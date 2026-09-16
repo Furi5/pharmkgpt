@@ -1,0 +1,4 @@
+system,label_accuracy,label_positive_recall,evidence_anchored_accuracy,evidence_anchored_positive_recall,answer_citation_presence,retrieved_reference_presence,target_gene_mention_rate
+PharmKGPT Full KG,0.5333333333,0.4666666667,0.5,0.4,0.6666666667,1.0,0.9
+Vanilla RAG,0.3666666667,0.5333333333,0.3,0.4,0.4333333333,1.0,0.9333333333
+No-retrieval LLM,0.3666666667,0.7333333333,0.2,0.4,0.2333333333,0.0,1.0

@@ -1,0 +1,692 @@
+{
+  "status": "complete",
+  "questions": 1000,
+  "conditions": {
+    "gold": {
+      "total": 1000,
+      "correct": 644,
+      "accuracy": 0.644,
+      "accuracy_95ci_wilson": [
+        0.6138239300340224,
+        0.6730739635221378
+      ],
+      "ground_truth_distribution": {
+        "yes": 552,
+        "no": 338,
+        "maybe": 110
+      },
+      "prediction_distribution": {
+        "yes": 438,
+        "maybe": 286,
+        "no": 276
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 374,
+          "no": 32,
+          "maybe": 146,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 24,
+          "no": 222,
+          "maybe": 92,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 40,
+          "no": 22,
+          "maybe": 48,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.5737022779368056,
+      "per_label": {
+        "yes": {
+          "precision": 0.8538812785388128,
+          "recall": 0.677536231884058,
+          "f1": 0.7555555555555555,
+          "support": 552
+        },
+        "no": {
+          "precision": 0.8043478260869565,
+          "recall": 0.6568047337278107,
+          "f1": 0.7231270358306189,
+          "support": 338
+        },
+        "maybe": {
+          "precision": 0.16783216783216784,
+          "recall": 0.43636363636363634,
+          "f1": 0.24242424242424243,
+          "support": 110
+        }
+      }
+    },
+    "closed_book": {
+      "total": 1000,
+      "correct": 144,
+      "accuracy": 0.144,
+      "accuracy_95ci_wilson": [
+        0.1236009499120135,
+        0.16712370212970176
+      ],
+      "ground_truth_distribution": {
+        "yes": 552,
+        "no": 338,
+        "maybe": 110
+      },
+      "prediction_distribution": {
+        "maybe": 926,
+        "yes": 65,
+        "no": 9
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 38,
+          "no": 5,
+          "maybe": 509,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 19,
+          "no": 4,
+          "maybe": 315,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 8,
+          "no": 0,
+          "maybe": 102,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.11438087107286869,
+      "per_label": {
+        "yes": {
+          "precision": 0.5846153846153846,
+          "recall": 0.06884057971014493,
+          "f1": 0.12317666126418152,
+          "support": 552
+        },
+        "no": {
+          "precision": 0.4444444444444444,
+          "recall": 0.011834319526627219,
+          "f1": 0.023054755043227664,
+          "support": 338
+        },
+        "maybe": {
+          "precision": 0.1101511879049676,
+          "recall": 0.9272727272727272,
+          "f1": 0.1969111969111969,
+          "support": 110
+        }
+      }
+    },
+    "pharmkgpt_retrieval": {
+      "total": 1000,
+      "correct": 540,
+      "accuracy": 0.54,
+      "accuracy_95ci_wilson": [
+        0.5090152862022621,
+        0.5706785731188935
+      ],
+      "ground_truth_distribution": {
+        "yes": 552,
+        "no": 338,
+        "maybe": 110
+      },
+      "prediction_distribution": {
+        "yes": 359,
+        "maybe": 424,
+        "no": 217
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 304,
+          "no": 28,
+          "maybe": 220,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 22,
+          "no": 174,
+          "maybe": 142,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 33,
+          "no": 15,
+          "maybe": 62,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.508878409360655,
+      "per_label": {
+        "yes": {
+          "precision": 0.8467966573816156,
+          "recall": 0.5507246376811594,
+          "f1": 0.6673984632272228,
+          "support": 552
+        },
+        "no": {
+          "precision": 0.8018433179723502,
+          "recall": 0.514792899408284,
+          "f1": 0.627027027027027,
+          "support": 338
+        },
+        "maybe": {
+          "precision": 0.14622641509433962,
+          "recall": 0.5636363636363636,
+          "f1": 0.23220973782771534,
+          "support": 110
+        }
+      }
+    }
+  },
+  "pairwise": {
+    "gold_vs_closed_book": {
+      "paired_samples": 1000,
+      "left_accuracy": 0.644,
+      "right_accuracy": 0.144,
+      "left_minus_right": 0.5,
+      "left_correct_right_wrong": 565,
+      "left_wrong_right_correct": 65,
+      "mcnemar_exact_two_sided_p": 1.8210755762438217e-100
+    },
+    "gold_vs_pharmkgpt_retrieval": {
+      "paired_samples": 1000,
+      "left_accuracy": 0.644,
+      "right_accuracy": 0.54,
+      "left_minus_right": 0.10399999999999998,
+      "left_correct_right_wrong": 153,
+      "left_wrong_right_correct": 49,
+      "mcnemar_exact_two_sided_p": 1.1907111675457703e-13
+    },
+    "closed_book_vs_pharmkgpt_retrieval": {
+      "paired_samples": 1000,
+      "left_accuracy": 0.144,
+      "right_accuracy": 0.54,
+      "left_minus_right": -0.396,
+      "left_correct_right_wrong": 56,
+      "left_wrong_right_correct": 452,
+      "mcnemar_exact_two_sided_p": 5.5477326427706615e-78
+    }
+  },
+  "retrieval_input_metrics": {
+    "exact_source_recall_at_k": {
+      "1": 0.635,
+      "2": 0.739,
+      "5": 0.845,
+      "10": 0.882
+    }
+  },
+  "pharmkgpt_retrieval_strata": {
+    "gold_source_hit": {
+      "total": 882,
+      "correct": 520,
+      "accuracy": 0.5895691609977324,
+      "accuracy_95ci_wilson": [
+        0.5567849457657169,
+        0.6215765414131996
+      ],
+      "ground_truth_distribution": {
+        "yes": 491,
+        "no": 297,
+        "maybe": 94
+      },
+      "prediction_distribution": {
+        "yes": 357,
+        "maybe": 315,
+        "no": 210
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 302,
+          "no": 23,
+          "maybe": 166,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 22,
+          "no": 172,
+          "maybe": 103,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 33,
+          "no": 15,
+          "maybe": 46,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.5385680041474379,
+      "per_label": {
+        "yes": {
+          "precision": 0.84593837535014,
+          "recall": 0.615071283095723,
+          "f1": 0.7122641509433962,
+          "support": 491
+        },
+        "no": {
+          "precision": 0.819047619047619,
+          "recall": 0.5791245791245792,
+          "f1": 0.6785009861932939,
+          "support": 297
+        },
+        "maybe": {
+          "precision": 0.14603174603174604,
+          "recall": 0.48936170212765956,
+          "f1": 0.22493887530562348,
+          "support": 94
+        }
+      }
+    },
+    "gold_source_miss": {
+      "total": 118,
+      "correct": 20,
+      "accuracy": 0.1694915254237288,
+      "accuracy_95ci_wilson": [
+        0.11248310046569439,
+        0.2473407168542595
+      ],
+      "ground_truth_distribution": {
+        "no": 41,
+        "yes": 61,
+        "maybe": 16
+      },
+      "prediction_distribution": {
+        "maybe": 109,
+        "no": 7,
+        "yes": 2
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 2,
+          "no": 5,
+          "maybe": 54,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 0,
+          "no": 2,
+          "maybe": 39,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 0,
+          "no": 0,
+          "maybe": 16,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.1342751322751323,
+      "per_label": {
+        "yes": {
+          "precision": 1.0,
+          "recall": 0.03278688524590164,
+          "f1": 0.06349206349206349,
+          "support": 61
+        },
+        "no": {
+          "precision": 0.2857142857142857,
+          "recall": 0.04878048780487805,
+          "f1": 0.08333333333333334,
+          "support": 41
+        },
+        "maybe": {
+          "precision": 0.14678899082568808,
+          "recall": 1.0,
+          "f1": 0.256,
+          "support": 16
+        }
+      }
+    }
+  },
+  "pharmkgpt_retrieval_rank_strata": {
+    "rank_1": {
+      "total": 635,
+      "correct": 406,
+      "accuracy": 0.6393700787401575,
+      "accuracy_95ci_wilson": [
+        0.6012869747879639,
+        0.6757770722554814
+      ],
+      "ground_truth_distribution": {
+        "yes": 344,
+        "no": 223,
+        "maybe": 68
+      },
+      "prediction_distribution": {
+        "yes": 276,
+        "maybe": 190,
+        "no": 169
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 233,
+          "no": 14,
+          "maybe": 97,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 17,
+          "no": 143,
+          "maybe": 63,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 26,
+          "no": 12,
+          "maybe": 30,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.571254293165128,
+      "per_label": {
+        "yes": {
+          "precision": 0.8442028985507246,
+          "recall": 0.6773255813953488,
+          "f1": 0.7516129032258064,
+          "support": 344
+        },
+        "no": {
+          "precision": 0.8461538461538461,
+          "recall": 0.6412556053811659,
+          "f1": 0.729591836734694,
+          "support": 223
+        },
+        "maybe": {
+          "precision": 0.15789473684210525,
+          "recall": 0.4411764705882353,
+          "f1": 0.23255813953488372,
+          "support": 68
+        }
+      },
+      "gold_accuracy_on_same_questions": 0.6409448818897637,
+      "closed_book_accuracy_on_same_questions": 0.14488188976377953,
+      "gold_minus_retrieval": 0.0015748031496062298,
+      "paired_gold_vs_retrieval": {
+        "paired_samples": 635,
+        "gold_correct_retrieval_wrong": 32,
+        "gold_wrong_retrieval_correct": 31,
+        "mcnemar_exact_two_sided_p": 1.0
+      }
+    },
+    "rank_2": {
+      "total": 104,
+      "correct": 45,
+      "accuracy": 0.4326923076923077,
+      "accuracy_95ci_wilson": [
+        0.34155001052392997,
+        0.5286297871800539
+      ],
+      "ground_truth_distribution": {
+        "yes": 60,
+        "no": 32,
+        "maybe": 12
+      },
+      "prediction_distribution": {
+        "maybe": 58,
+        "yes": 29,
+        "no": 17
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 23,
+          "no": 2,
+          "maybe": 35,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 3,
+          "no": 14,
+          "maybe": 15,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 3,
+          "no": 1,
+          "maybe": 8,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.4389513108614232,
+      "per_label": {
+        "yes": {
+          "precision": 0.7931034482758621,
+          "recall": 0.38333333333333336,
+          "f1": 0.5168539325842697,
+          "support": 60
+        },
+        "no": {
+          "precision": 0.8235294117647058,
+          "recall": 0.4375,
+          "f1": 0.5714285714285714,
+          "support": 32
+        },
+        "maybe": {
+          "precision": 0.13793103448275862,
+          "recall": 0.6666666666666666,
+          "f1": 0.2285714285714286,
+          "support": 12
+        }
+      },
+      "gold_accuracy_on_same_questions": 0.5961538461538461,
+      "closed_book_accuracy_on_same_questions": 0.16346153846153846,
+      "gold_minus_retrieval": 0.16346153846153844,
+      "paired_gold_vs_retrieval": {
+        "paired_samples": 104,
+        "gold_correct_retrieval_wrong": 20,
+        "gold_wrong_retrieval_correct": 3,
+        "mcnemar_exact_two_sided_p": 0.00048828125
+      }
+    },
+    "rank_3_5": {
+      "total": 106,
+      "correct": 53,
+      "accuracy": 0.5,
+      "accuracy_95ci_wilson": [
+        0.40649497530416856,
+        0.5935050246958314
+      ],
+      "ground_truth_distribution": {
+        "yes": 63,
+        "no": 31,
+        "maybe": 12
+      },
+      "prediction_distribution": {
+        "maybe": 49,
+        "yes": 39,
+        "no": 18
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 35,
+          "no": 5,
+          "maybe": 23,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 1,
+          "no": 11,
+          "maybe": 19,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 3,
+          "no": 2,
+          "maybe": 7,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.45492076612065585,
+      "per_label": {
+        "yes": {
+          "precision": 0.8974358974358975,
+          "recall": 0.5555555555555556,
+          "f1": 0.6862745098039216,
+          "support": 63
+        },
+        "no": {
+          "precision": 0.6111111111111112,
+          "recall": 0.3548387096774194,
+          "f1": 0.4489795918367347,
+          "support": 31
+        },
+        "maybe": {
+          "precision": 0.14285714285714285,
+          "recall": 0.5833333333333334,
+          "f1": 0.22950819672131142,
+          "support": 12
+        }
+      },
+      "gold_accuracy_on_same_questions": 0.660377358490566,
+      "closed_book_accuracy_on_same_questions": 0.10377358490566038,
+      "gold_minus_retrieval": 0.160377358490566,
+      "paired_gold_vs_retrieval": {
+        "paired_samples": 106,
+        "gold_correct_retrieval_wrong": 22,
+        "gold_wrong_retrieval_correct": 5,
+        "mcnemar_exact_two_sided_p": 0.0015137195587158203
+      }
+    },
+    "rank_6_10": {
+      "total": 37,
+      "correct": 16,
+      "accuracy": 0.43243243243243246,
+      "accuracy_95ci_wilson": [
+        0.28671719277157315,
+        0.5908581890983192
+      ],
+      "ground_truth_distribution": {
+        "yes": 24,
+        "no": 11,
+        "maybe": 2
+      },
+      "prediction_distribution": {
+        "maybe": 18,
+        "yes": 13,
+        "no": 6
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 11,
+          "no": 2,
+          "maybe": 11,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 1,
+          "no": 4,
+          "maybe": 6,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 1,
+          "no": 0,
+          "maybe": 1,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.3883942766295707,
+      "per_label": {
+        "yes": {
+          "precision": 0.8461538461538461,
+          "recall": 0.4583333333333333,
+          "f1": 0.5945945945945945,
+          "support": 24
+        },
+        "no": {
+          "precision": 0.6666666666666666,
+          "recall": 0.36363636363636365,
+          "f1": 0.4705882352941177,
+          "support": 11
+        },
+        "maybe": {
+          "precision": 0.05555555555555555,
+          "recall": 0.5,
+          "f1": 0.09999999999999999,
+          "support": 2
+        }
+      },
+      "gold_accuracy_on_same_questions": 0.7027027027027027,
+      "closed_book_accuracy_on_same_questions": 0.08108108108108109,
+      "gold_minus_retrieval": 0.2702702702702703,
+      "paired_gold_vs_retrieval": {
+        "paired_samples": 37,
+        "gold_correct_retrieval_wrong": 10,
+        "gold_wrong_retrieval_correct": 0,
+        "mcnemar_exact_two_sided_p": 0.001953125
+      }
+    },
+    "miss": {
+      "total": 118,
+      "correct": 20,
+      "accuracy": 0.1694915254237288,
+      "accuracy_95ci_wilson": [
+        0.11248310046569439,
+        0.2473407168542595
+      ],
+      "ground_truth_distribution": {
+        "no": 41,
+        "yes": 61,
+        "maybe": 16
+      },
+      "prediction_distribution": {
+        "maybe": 109,
+        "no": 7,
+        "yes": 2
+      },
+      "confusion_matrix": {
+        "yes": {
+          "yes": 2,
+          "no": 5,
+          "maybe": 54,
+          "unknown": 0
+        },
+        "no": {
+          "yes": 0,
+          "no": 2,
+          "maybe": 39,
+          "unknown": 0
+        },
+        "maybe": {
+          "yes": 0,
+          "no": 0,
+          "maybe": 16,
+          "unknown": 0
+        }
+      },
+      "macro_f1": 0.1342751322751323,
+      "per_label": {
+        "yes": {
+          "precision": 1.0,
+          "recall": 0.03278688524590164,
+          "f1": 0.06349206349206349,
+          "support": 61
+        },
+        "no": {
+          "precision": 0.2857142857142857,
+          "recall": 0.04878048780487805,
+          "f1": 0.08333333333333334,
+          "support": 41
+        },
+        "maybe": {
+          "precision": 0.14678899082568808,
+          "recall": 1.0,
+          "f1": 0.256,
+          "support": 16
+        }
+      },
+      "gold_accuracy_on_same_questions": 0.6694915254237288,
+      "closed_book_accuracy_on_same_questions": 0.17796610169491525,
+      "gold_minus_retrieval": 0.5,
+      "paired_gold_vs_retrieval": {
+        "paired_samples": 118,
+        "gold_correct_retrieval_wrong": 69,
+        "gold_wrong_retrieval_correct": 10,
+        "mcnemar_exact_two_sided_p": 5.544696639021875e-12
+      }
+    }
+  }
+}

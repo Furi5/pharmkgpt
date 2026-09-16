@@ -1,0 +1,93 @@
+{
+  "clinvar_AD": {
+    "accepted_records": 162,
+    "classification_counts": {
+      "Benign": 3,
+      "Benign/Likely benign": 6,
+      "Conflicting classifications of pathogenicity": 42,
+      "Conflicting classifications of pathogenicity; other": 1,
+      "Conflicting classifications of pathogenicity; other; risk factor": 1,
+      "Conflicting classifications of pathogenicity; risk factor": 1,
+      "Likely pathogenic": 57,
+      "Pathogenic": 101,
+      "Pathogenic/Likely pathogenic": 25,
+      "Pathogenic/Pathogenic, low penetrance; risk factor": 1,
+      "Uncertain significance": 48,
+      "not provided": 2,
+      "protective": 1,
+      "risk factor": 3
+    },
+    "genes": 11,
+    "query": "\"Alzheimer disease\"[dis] AND (pathogenic[All Fields] OR \"likely pathogenic\"[All Fields])",
+    "rejected_classification": 109,
+    "rejected_gene_cardinality": 9,
+    "rejected_trait": 12,
+    "retrieved_ids": 292,
+    "status": "ok",
+    "total_query_records": 292,
+    "truncated": false
+  },
+  "clinvar_DELIRIUM": {
+    "genes": 0,
+    "records": 0,
+    "status": "not_configured"
+  },
+  "hpo": {
+    "genes_to_disease_rows": 15944,
+    "genes_to_phenotype_rows": 332599,
+    "per_disease": {
+      "AD": {
+        "genes": 10,
+        "hpo_disease_ids": [
+          "OMIM:104300",
+          "OMIM:104310",
+          "OMIM:605526",
+          "OMIM:606889",
+          "OMIM:607822",
+          "OMIM:608907",
+          "ORPHA:1020"
+        ],
+        "hpo_phenotype_id": null,
+        "matched_rows": 15
+      },
+      "DELIRIUM": {
+        "genes": 10,
+        "hpo_disease_ids": [],
+        "hpo_phenotype_id": "HP:0031258",
+        "matched_rows": 12
+      }
+    },
+    "status": "ok"
+  },
+  "negative_controls": {
+    "accepted_before_balancing": 15,
+    "included": 15,
+    "rejected": 0
+  },
+  "panelapp_AD": {
+    "genes": 3,
+    "panel_details": [
+      {
+        "accepted_genes": 3,
+        "panel_id": 474,
+        "panel_name": "Adult onset neurodegenerative disorder",
+        "total_genes": 431,
+        "version": "9.3"
+      }
+    ],
+    "panels": 1,
+    "status": "ok"
+  },
+  "panelapp_DELIRIUM": {
+    "genes": 0,
+    "panels": 0,
+    "status": "not_configured"
+  },
+  "source_urls": {
+    "clinvar_eutils": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+    "hpo_genes_to_disease": "https://purl.obolibrary.org/obo/hp/hpoa/genes_to_disease.txt",
+    "hpo_genes_to_phenotype": "https://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt",
+    "panelapp_api": "https://panelapp.genomicsengland.co.uk/api/v1"
+  },
+  "warnings": []
+}

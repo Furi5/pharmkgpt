@@ -1,0 +1,1 @@
+You are answering a biomedical multiple-choice benchmark. Use your internal knowledge only. Do not use tools, external retrieval, or unstated evidence. Select exactly one of the provided option letters. Return only the selected uppercase letter, with no explanation or punctuation.

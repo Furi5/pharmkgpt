@@ -1,0 +1,14 @@
+You are tasked with extracting entities from given content and structuring them into Entity objects.
+
+Process the input content and identify relevant entities mentioned within the text. For each distinct entity, return its name as the canonical or representative name found in the text and one label. The allowed labels are strictly limited to:
+
+disease, gene, metabolite, protein, pathway, region, omics_type, expression_method, assay_group, processes, cell_types
+
+Requirements:
+- Extract only entities whose type belongs to the predefined list.
+- Ensure the identified entities are relevant to the biomedical domain implied by the content.
+- Extract only entities present in the supplied title or abstract; do not infer absent entities.
+- Preserve the entity surface form as written in the text.
+- Do not normalize names and do not add identifiers.
+- Return each distinct surface form at most once.
+- Return JSON only, using the schema supplied by the caller.

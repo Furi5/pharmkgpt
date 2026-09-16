@@ -1,0 +1,47 @@
+{
+  "models": [
+    {
+      "model": "gpt-5.2-2025-12-11",
+      "status": "complete",
+      "benchmark_questions": 1045,
+      "completed_questions": 1045,
+      "missing_questions": 0,
+      "parsed_answers": 1045,
+      "answer_parse_coverage_completed": 1.0,
+      "correct_answers": 864,
+      "accuracy_completed": 0.8267942583732057,
+      "accuracy_completed_95ci": [
+        0.8026641149457893,
+        0.8485305858891278
+      ],
+      "accuracy_full_benchmark_conservative": 0.8267942583732057
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "status": "complete",
+      "benchmark_questions": 1045,
+      "completed_questions": 1045,
+      "missing_questions": 0,
+      "parsed_answers": 1045,
+      "answer_parse_coverage_completed": 1.0,
+      "correct_answers": 897,
+      "accuracy_completed": 0.8583732057416268,
+      "accuracy_completed_95ci": [
+        0.8359188088611388,
+        0.8782024662857909
+      ],
+      "accuracy_full_benchmark_conservative": 0.8583732057416268
+    }
+  ],
+  "paired_comparison": {
+    "comparison": "GPT-5.2 vs Gemini 3.1 Pro Preview",
+    "paired_questions": 1045,
+    "both_correct": 815,
+    "gpt_5_2_only_correct": 49,
+    "gemini_3_1_only_correct": 82,
+    "both_wrong": 99,
+    "discordant_pairs": 131,
+    "exact_mcnemar_two_sided_p": 0.004981347901780459,
+    "valid_for_full_benchmark_claim": true
+  }
+}

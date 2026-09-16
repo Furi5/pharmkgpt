@@ -1,0 +1,8 @@
+Component or Control,Analysis Type,Reference,Variant,N,Ordered List Changed,Ordered List Changed (%),PMID Set Changed,PMID Set Changed (%),Context Count Changed,Context Count Changed (%),Top-1 Changed,Answer Correctness Flipped,Reference-only Correct,Variant-only Correct,Net Correct for Reference,Recall@10 Flipped,Reference-only Recall@10,Variant-only Recall@10,Net Recall@10 for Reference
+Graph Filtering,component ablation,Full Model,w/o Graph Filtering,1045,1045,100.0,775,74.16,367,35.12,296,160,101,59,42,35,2,33,-31
+MST Filtering,component ablation,Full Model,w/o MST Filtering,1045,0,0.0,0,0.0,0,0.0,0,0,0,0,0,0,0,0,0
+N-gram Overlap Edges,component ablation,Full Model,w/o N-gram Overlap Edges,1045,16,1.53,16,1.53,16,1.53,0,2,0,2,-2,2,0,2,-2
+Entity Weighting,component ablation,Full Model,w/o Entity Weighting,1045,71,6.79,43,4.11,26,2.49,3,8,4,4,0,2,1,1,0
+KG Expansion,component ablation,Full Model,w/o KG Expansion,1045,284,27.18,284,27.18,147,14.07,4,31,17,14,3,16,8,8,0
+Reranker,component ablation,Full Model,w/o Reranker,1045,677,64.78,677,64.78,0,0.0,0,94,48,46,2,17,17,0,17
+Matched Semantic Control,context-matched control,Full Model,Semantic-only + Reranker (Matched Context Count),1045,1045,100.0,835,79.9,1,0.1,299,136,69,67,2,42,8,34,-26

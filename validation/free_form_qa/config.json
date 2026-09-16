@@ -1,0 +1,20 @@
+{
+  "generator": "deepseek-chat",
+  "systems": [
+    "PharmKGPT Full KG",
+    "PharmKGPT Vanilla RAG"
+  ],
+  "questions": 100,
+  "reviewers": 2,
+  "bootstrap_samples": 100000,
+  "bootstrap_unit": "question_id",
+  "scored_fields": [
+    "answer_a_correctness_0_2",
+    "answer_b_correctness_0_2",
+    "answer_a_evidence_support_0_2",
+    "answer_b_evidence_support_0_2",
+    "preferred_answer_a_b_tie"
+  ],
+  "bootstrap_seed": 20260804,
+  "permutation_samples": 200000
+}

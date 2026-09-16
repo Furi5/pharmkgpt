@@ -1,0 +1,53 @@
+{
+  "comparisons": [
+    {
+      "accuracy_difference": 0.16666666666666669,
+      "both_correct": 8,
+      "both_wrong": 11,
+      "mcnemar_exact_two_sided_p": 0.2265625,
+      "paired_odds_ratio_haldane": 2.4285714285714284,
+      "system_1": "Full",
+      "system_1_accuracy": 0.5333333333333333,
+      "system_1_only_correct": 8,
+      "system_2": "Vanilla",
+      "system_2_accuracy": 0.36666666666666664,
+      "system_2_only_correct": 3,
+      "total": 30
+    },
+    {
+      "accuracy_difference": 0.16666666666666669,
+      "both_correct": 6,
+      "both_wrong": 9,
+      "mcnemar_exact_two_sided_p": 0.3017578125,
+      "paired_odds_ratio_haldane": 1.9090909090909092,
+      "system_1": "Full",
+      "system_1_accuracy": 0.5333333333333333,
+      "system_1_only_correct": 10,
+      "system_2": "RawLLM",
+      "system_2_accuracy": 0.36666666666666664,
+      "system_2_only_correct": 5,
+      "total": 30
+    },
+    {
+      "accuracy_difference": 0.0,
+      "both_correct": 6,
+      "both_wrong": 14,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "paired_odds_ratio_haldane": 1.0,
+      "system_1": "Vanilla",
+      "system_1_accuracy": 0.36666666666666664,
+      "system_1_only_correct": 5,
+      "system_2": "RawLLM",
+      "system_2_accuracy": 0.36666666666666664,
+      "system_2_only_correct": 5,
+      "total": 30
+    }
+  ],
+  "gold_key": "benchmark_gold_key.jsonl",
+  "multiple_testing_note": "Report raw exact p-values and apply Holm correction if many systems are compared.",
+  "prediction_files": {
+    "Full": "model_predictions/pharmkgpt_full_kg_predictions.jsonl",
+    "RawLLM": "model_predictions/no_retrieval_llm_predictions.jsonl",
+    "Vanilla": "model_predictions/pharmkgpt_vanilla_rag_predictions.jsonl"
+  }
+}

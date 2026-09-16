@@ -1,0 +1,40 @@
+{
+  "analysis_mode": "historical_prompt_rerun",
+  "configuration": "Full Model w/o all PubTator-linked entities",
+  "counts": {
+    "base_non_abstract_entity_occurrences": 50605,
+    "base_vector_nodes": 19330,
+    "classified_final_occurrences": 50605,
+    "documents": 5059,
+    "removed_entity_occurrences": 47188,
+    "removed_global_vector_nodes": 12330,
+    "removed_incident_relations": 111174,
+    "removed_occurrences_by_provenance": {
+      "pubtator_only": 24223,
+      "shared_llm_pubtator": 22965
+    },
+    "removed_pubtator_only_occurrences": 24223,
+    "removed_shared_llm_pubtator_occurrences": 22965,
+    "retained_vector_nodes": 7000
+  },
+  "design": {
+    "generation": "not evaluated; exact-source ranking is primary",
+    "removal_scope": "all_pubtator_linked",
+    "removed_provenances": [
+      "pubtator_only",
+      "shared_llm_pubtator"
+    ],
+    "retained": [
+      "llm_only",
+      "unresolved"
+    ],
+    "retrieval_and_reranking": "unchanged Full Model pipeline",
+    "type": "frozen-edge occurrence-level node deletion"
+  },
+  "formal_ready": true,
+  "limitations": [
+    "Historical pre-PubTator LLM entities are reconstructed, not recovered byte-for-byte.",
+    "Relations are held fixed and incident edges are deleted; relation extraction is not regenerated.",
+    "This stress test deletes shared LLM-PubTator entities too; it is not a clean estimate of PubTator's unique contribution."
+  ]
+}

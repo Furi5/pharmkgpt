@@ -1,0 +1,90 @@
+{
+  "system": "Microsoft GraphRAG 3.1.1 native local search (DeepSeek v4 Flash)",
+  "retrieval_evaluation_denominator": 1045,
+  "retrieval_hit_questions": 489,
+  "recall_at_1": 0.21626794258373205,
+  "recall_at_1_95ci": [
+    0.1923697726919571,
+    0.24224449144405186
+  ],
+  "recall_at_5": 0.3569377990430622,
+  "recall_at_5_95ci": [
+    0.3284625202738685,
+    0.38646102943383237
+  ],
+  "recall_at_10": 0.4277511961722488,
+  "recall_at_10_95ci": [
+    0.39807261413824185,
+    0.45795901129942646
+  ],
+  "mrr": 0.28054981911793053,
+  "median_observed_rank": 2,
+  "answer_runs": [
+    {
+      "run": 1,
+      "evaluation_denominator": 1045,
+      "parsed_answers": 1045,
+      "answer_parse_coverage": 1.0,
+      "correct_answers": 824,
+      "answer_accuracy": 0.7885167464114833,
+      "answer_accuracy_95ci": [
+        0.7627238167606847,
+        0.8121962485445204
+      ]
+    },
+    {
+      "run": 2,
+      "evaluation_denominator": 1045,
+      "parsed_answers": 1045,
+      "answer_parse_coverage": 1.0,
+      "correct_answers": 824,
+      "answer_accuracy": 0.7885167464114833,
+      "answer_accuracy_95ci": [
+        0.7627238167606847,
+        0.8121962485445204
+      ]
+    },
+    {
+      "run": 3,
+      "evaluation_denominator": 1045,
+      "parsed_answers": 1045,
+      "answer_parse_coverage": 1.0,
+      "correct_answers": 826,
+      "answer_accuracy": 0.7904306220095694,
+      "answer_accuracy_95ci": [
+        0.7647125482708809,
+        0.8140212488108097
+      ]
+    },
+    {
+      "run": 4,
+      "evaluation_denominator": 1045,
+      "parsed_answers": 1045,
+      "answer_parse_coverage": 1.0,
+      "correct_answers": 823,
+      "answer_accuracy": 0.7875598086124402,
+      "answer_accuracy_95ci": [
+        0.7617297547433152,
+        0.8112834446736471
+      ]
+    },
+    {
+      "run": 5,
+      "evaluation_denominator": 1045,
+      "parsed_answers": 1045,
+      "answer_parse_coverage": 1.0,
+      "correct_answers": 824,
+      "answer_accuracy": 0.7885167464114833,
+      "answer_accuracy_95ci": [
+        0.7627238167606847,
+        0.8121962485445204
+      ]
+    }
+  ],
+  "completed_answer_run_count": 5,
+  "answer_parse_coverage_mean": 1.0,
+  "answer_accuracy_mean": 0.7887081339712919,
+  "answer_accuracy_sample_sd": 0.0010482728373304427,
+  "index_constructed_independently_from_itext2kg": true,
+  "pubtator_annotations_used": false
+}

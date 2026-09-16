@@ -1,0 +1,22 @@
+{
+  "itext2kg": {
+    "repository": "https://github.com/AuvaLab/itext2kg.git",
+    "tag": "v0.0.7",
+    "commit": "48a9bb9896d0f18e7e8fdd3836aa424edcf4e034",
+    "distribution_version": "0.0.7",
+    "source_sha256": {
+      "itext2kg.py": "03a15019a72e82248df728a5041f56e126c68f88d5f75872940551f5f3054674",
+      "ientities_extraction/ientities_extractor.py": "d28196ce01aa5605f5b1fd35f50bdd7bd42da1450c7646118654abb0f8626f73",
+      "irelations_extraction/irelations_extractor.py": "8233acce0b367d6cc6e4234015935a7bc8d620275c588d918e09bb843bb3df86"
+    }
+  },
+  "kg2rag": {
+    "repository": "https://github.com/nju-websoft/KG2RAG.git",
+    "commit": "7d626c77b7af30b55aa3f960cde755b9549a0616",
+    "source_sha256": {
+      "code/kg_rag_full.py": "b6908df53598077cc2b7aa20e19026916940b7b5705a568bcb7a4f1ab0003d4e",
+      "code/util/kg_post_processor.py": "dd61721a49770ba8dbe3334e478cb2036b0440c5e8256906cc0f41fcbac1e8f2"
+    },
+    "adaptation": "PubMed PMID and extracted-entity provenance adapter; upstream semantic retrieval, one-hop expansion, graph filtering/MST, reranking, and chunk organization retained."
+  }
+}

@@ -1,0 +1,3 @@
+Question: {question}
+Options: {options}
+Answer with exactly one option letter.

@@ -1,0 +1,137 @@
+{
+  "baseline": {
+    "package": "graphrag",
+    "version": "3.1.1",
+    "release_commit": "14a00ad88fc33cf2b52f4f113f25807556f8e25e",
+    "index_method": "standard",
+    "query_method": "local",
+    "upstream_repository": "https://github.com/microsoft/graphrag"
+  },
+  "benchmark": "../data/benchmark.json",
+  "corpus_documents": 5059,
+  "construction_model": "deepseek-v4-flash",
+  "answer_model": "deepseek-v4-flash",
+  "answer_temperature": 0,
+  "answer_thinking": "disabled",
+  "runs": 5,
+  "questions_per_run": 1045,
+  "pubtator_annotations_used": false,
+  "retrieval": {
+    "chunk_unit": "tokens",
+    "chunk_length": 1200,
+    "chunk_overlap": 100,
+    "initial_top_k_entities": 10,
+    "initial_top_k_relationships": 10,
+    "final_context_tokens": 12000,
+    "text_unit_context_fraction": 0.5,
+    "community_context_fraction": 0.15,
+    "reranker": null
+  },
+  "completion_models": {
+    "default_completion_model": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 2048,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    "answer_completion_model_run_1": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 64,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    "answer_completion_model_run_2": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 64,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    "answer_completion_model_run_3": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 64,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    "answer_completion_model_run_4": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 64,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    },
+    "answer_completion_model_run_5": {
+      "model": "deepseek-v4-flash",
+      "call_args": {
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 64,
+        "extra_body": {
+          "thinking": {
+            "type": "disabled"
+          }
+        }
+      }
+    }
+  },
+  "embedding_model": "nomic-embed-text:0a109f422b47",
+  "local_search": {
+    "completion_model_id": "answer_completion_model_run_1",
+    "embedding_model_id": "default_embedding_model",
+    "text_unit_prop": 0.5,
+    "community_prop": 0.15,
+    "top_k_entities": 10,
+    "top_k_relationships": 10,
+    "max_context_tokens": 12000
+  },
+  "extract_graph": {
+    "completion_model_id": "default_completion_model",
+    "entity_types": [
+      "drug",
+      "chemical",
+      "disease",
+      "symptom",
+      "gene",
+      "protein",
+      "pathway",
+      "biological_process",
+      "cell_type",
+      "anatomy",
+      "clinical_event"
+    ],
+    "max_gleanings": 1
+  }
+}

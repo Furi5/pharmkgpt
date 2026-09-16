@@ -1,0 +1,6 @@
+stage,entity_provenance,n,percent,denominator
+final_connected,shared_llm_pubtator,22965,45.3809,final connected document-entity occurrences
+final_connected,pubtator_only,24223,47.8668,final connected document-entity occurrences
+final_connected,llm_only,1514,2.9918,final connected document-entity occurrences
+final_connected,unresolved,1903,3.7605,final connected document-entity occurrences
+final_connected,total,50605,100.0,final connected document-entity occurrences

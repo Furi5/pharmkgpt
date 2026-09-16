@@ -1,0 +1,17 @@
+{
+  "parameters": {
+    "candidate_k": 20,
+    "final_k": 10,
+    "semantic_search_k": 20,
+    "hops": 1,
+    "similarity_cutoff": 0.5,
+    "embed_model": "nomic-embed-text:latest",
+    "reranker_device": "mps",
+    "reranker_batch_size": 4,
+    "deterministic_hash_seed": "0"
+  },
+  "embedding_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "benchmark_sha256": "f14546ecdc81c843a5fda5a15ea7521a624997aaec20b94026e21b4fad91381c",
+  "reranker_sha256": "c5ae4e262c60ed2fb507ec587358285377ec36ee0a2e6da029f0534272b06d36",
+  "reranker": "bge-reranker-large"
+}

@@ -1,0 +1,354 @@
+{
+  "accuracy": 0.36666666666666664,
+  "accuracy_wilson_95ci": [
+    0.21873920806100708,
+    0.5448643634520511
+  ],
+  "balanced_accuracy": 0.3666666666666667,
+  "by_disease": {
+    "AD": {
+      "accuracy": 0.7,
+      "accuracy_wilson_95ci": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "balanced_accuracy": 0.7,
+      "citation_presence_rate": 0.6,
+      "correct": 7,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.7,
+      "evidence_anchored_correct": 7,
+      "evidence_anchored_positive_recall": 1.0,
+      "evidence_anchored_positive_recall_wilson_95ci": [
+        0.5655175352168251,
+        1.0
+      ],
+      "evidence_anchored_positive_recovery_count": 5,
+      "evidence_presence_rate": 0.9,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": 0.8333333333333333,
+      "fn": 0,
+      "fp": 2,
+      "missing_predictions": 0,
+      "negative_total": 5,
+      "parse_error_count": 1,
+      "parse_error_rate": 0.1,
+      "positive_total": 5,
+      "precision_positive": 0.7142857142857143,
+      "prediction_coverage": 0.9,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": 1.0,
+      "sensitivity_wilson_95ci": [
+        0.5655175352168251,
+        1.0
+      ],
+      "specificity_negative": 0.4,
+      "specificity_wilson_95ci": [
+        0.11762077423264783,
+        0.769275718723987
+      ],
+      "target_gene_mention_rate": 1.0,
+      "tn": 2,
+      "total": 10,
+      "tp": 5,
+      "unknown": 1,
+      "unknown_negative": 1,
+      "unknown_positive": 0
+    },
+    "DELIRIUM": {
+      "accuracy": 0.2,
+      "accuracy_wilson_95ci": [
+        0.08065766257979806,
+        0.41601743225189364
+      ],
+      "balanced_accuracy": 0.2,
+      "citation_presence_rate": 0.35,
+      "correct": 4,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.1,
+      "evidence_anchored_correct": 2,
+      "evidence_anchored_positive_recall": 0.1,
+      "evidence_anchored_positive_recall_wilson_95ci": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "evidence_anchored_positive_recovery_count": 1,
+      "evidence_presence_rate": 1.0,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": 0.4285714285714285,
+      "fn": 2,
+      "fp": 1,
+      "missing_predictions": 0,
+      "negative_total": 10,
+      "parse_error_count": 0,
+      "parse_error_rate": 0.0,
+      "positive_total": 10,
+      "precision_positive": 0.75,
+      "prediction_coverage": 0.35,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": 0.3,
+      "sensitivity_wilson_95ci": [
+        0.10779126740630099,
+        0.6032218525388546
+      ],
+      "specificity_negative": 0.1,
+      "specificity_wilson_95ci": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "target_gene_mention_rate": 0.9,
+      "tn": 1,
+      "total": 20,
+      "tp": 3,
+      "unknown": 13,
+      "unknown_negative": 8,
+      "unknown_positive": 5
+    }
+  },
+  "by_label_strength": {
+    "source_scoped_negative": {
+      "accuracy": 0.2,
+      "accuracy_wilson_95ci": [
+        0.07047549346981563,
+        0.45185448715169363
+      ],
+      "balanced_accuracy": null,
+      "citation_presence_rate": 0.26666666666666666,
+      "correct": 3,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.2,
+      "evidence_anchored_correct": 3,
+      "evidence_anchored_positive_recall": null,
+      "evidence_anchored_positive_recall_wilson_95ci": null,
+      "evidence_anchored_positive_recovery_count": 0,
+      "evidence_presence_rate": 0.9333333333333333,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": null,
+      "fn": 0,
+      "fp": 3,
+      "missing_predictions": 0,
+      "negative_total": 15,
+      "parse_error_count": 1,
+      "parse_error_rate": 0.06666666666666667,
+      "positive_total": 0,
+      "precision_positive": 0.0,
+      "prediction_coverage": 0.4,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": null,
+      "sensitivity_wilson_95ci": null,
+      "specificity_negative": 0.2,
+      "specificity_wilson_95ci": [
+        0.07047549346981563,
+        0.45185448715169363
+      ],
+      "target_gene_mention_rate": 0.9333333333333333,
+      "tn": 3,
+      "total": 15,
+      "tp": 0,
+      "unknown": 9,
+      "unknown_negative": 9,
+      "unknown_positive": 0
+    },
+    "strong": {
+      "accuracy": 0.5333333333333333,
+      "accuracy_wilson_95ci": [
+        0.30116980025498397,
+        0.7519046463426261
+      ],
+      "balanced_accuracy": null,
+      "citation_presence_rate": 0.6,
+      "correct": 8,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.4,
+      "evidence_anchored_correct": 6,
+      "evidence_anchored_positive_recall": 0.4,
+      "evidence_anchored_positive_recall_wilson_95ci": [
+        0.1982449614134158,
+        0.6425316987937539
+      ],
+      "evidence_anchored_positive_recovery_count": 6,
+      "evidence_presence_rate": 1.0,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": 0.6956521739130436,
+      "fn": 2,
+      "fp": 0,
+      "missing_predictions": 0,
+      "negative_total": 0,
+      "parse_error_count": 0,
+      "parse_error_rate": 0.0,
+      "positive_total": 15,
+      "precision_positive": 1.0,
+      "prediction_coverage": 0.6666666666666666,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": 0.5333333333333333,
+      "sensitivity_wilson_95ci": [
+        0.30116980025498397,
+        0.7519046463426261
+      ],
+      "specificity_negative": null,
+      "specificity_wilson_95ci": null,
+      "target_gene_mention_rate": 0.9333333333333333,
+      "tn": 0,
+      "total": 15,
+      "tp": 8,
+      "unknown": 5,
+      "unknown_negative": 0,
+      "unknown_positive": 5
+    }
+  },
+  "by_task_subtype": {
+    "gene_associated_disorder_phenotype": {
+      "accuracy": 0.2,
+      "accuracy_wilson_95ci": [
+        0.08065766257979806,
+        0.41601743225189364
+      ],
+      "balanced_accuracy": 0.2,
+      "citation_presence_rate": 0.35,
+      "correct": 4,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.1,
+      "evidence_anchored_correct": 2,
+      "evidence_anchored_positive_recall": 0.1,
+      "evidence_anchored_positive_recall_wilson_95ci": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "evidence_anchored_positive_recovery_count": 1,
+      "evidence_presence_rate": 1.0,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": 0.4285714285714285,
+      "fn": 2,
+      "fp": 1,
+      "missing_predictions": 0,
+      "negative_total": 10,
+      "parse_error_count": 0,
+      "parse_error_rate": 0.0,
+      "positive_total": 10,
+      "precision_positive": 0.75,
+      "prediction_coverage": 0.35,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": 0.3,
+      "sensitivity_wilson_95ci": [
+        0.10779126740630099,
+        0.6032218525388546
+      ],
+      "specificity_negative": 0.1,
+      "specificity_wilson_95ci": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "target_gene_mention_rate": 0.9,
+      "tn": 1,
+      "total": 20,
+      "tp": 3,
+      "unknown": 13,
+      "unknown_negative": 8,
+      "unknown_positive": 5
+    },
+    "gene_disease_association": {
+      "accuracy": 0.7,
+      "accuracy_wilson_95ci": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "balanced_accuracy": 0.7,
+      "citation_presence_rate": 0.6,
+      "correct": 7,
+      "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+      "evidence_anchored_accuracy": 0.7,
+      "evidence_anchored_correct": 7,
+      "evidence_anchored_positive_recall": 1.0,
+      "evidence_anchored_positive_recall_wilson_95ci": [
+        0.5655175352168251,
+        1.0
+      ],
+      "evidence_anchored_positive_recovery_count": 5,
+      "evidence_presence_rate": 0.9,
+      "execution_error_count": 0,
+      "execution_error_rate": 0.0,
+      "f1_positive": 0.8333333333333333,
+      "fn": 0,
+      "fp": 2,
+      "missing_predictions": 0,
+      "negative_total": 5,
+      "parse_error_count": 1,
+      "parse_error_rate": 0.1,
+      "positive_total": 5,
+      "precision_positive": 0.7142857142857143,
+      "prediction_coverage": 0.9,
+      "retrieved_reference_presence_rate": 1.0,
+      "sensitivity_recall_positive": 1.0,
+      "sensitivity_wilson_95ci": [
+        0.5655175352168251,
+        1.0
+      ],
+      "specificity_negative": 0.4,
+      "specificity_wilson_95ci": [
+        0.11762077423264783,
+        0.769275718723987
+      ],
+      "target_gene_mention_rate": 1.0,
+      "tn": 2,
+      "total": 10,
+      "tp": 5,
+      "unknown": 1,
+      "unknown_negative": 1,
+      "unknown_positive": 0
+    }
+  },
+  "citation_presence_rate": 0.43333333333333335,
+  "correct": 11,
+  "evidence_anchor_definition": "For gold-positive items: predicted yes, target gene symbol appears in the answer/evidence, non-empty evidence is emitted, and the answer explicitly emits at least one citation. This is an automatic sanity check, not manual citation validity. Gold-negative items retain ordinary label correctness.",
+  "evidence_anchored_accuracy": 0.3,
+  "evidence_anchored_correct": 9,
+  "evidence_anchored_positive_recall": 0.4,
+  "evidence_anchored_positive_recall_wilson_95ci": [
+    0.1982449614134158,
+    0.6425316987937539
+  ],
+  "evidence_anchored_positive_recovery_count": 6,
+  "evidence_presence_rate": 0.9666666666666667,
+  "execution_error_count": 0,
+  "execution_error_rate": 0.0,
+  "extra_prediction_ids": [],
+  "f1_positive": 0.6153846153846153,
+  "fn": 2,
+  "fp": 3,
+  "missing_predictions": 0,
+  "negative_total": 15,
+  "parse_error_count": 1,
+  "parse_error_rate": 0.03333333333333333,
+  "positive_total": 15,
+  "precision_positive": 0.7272727272727273,
+  "predicted_label_counts": {
+    "no": 5,
+    "unknown": 14,
+    "yes": 11
+  },
+  "prediction_coverage": 0.5333333333333333,
+  "prediction_rows_read": 30,
+  "retrieved_reference_presence_rate": 1.0,
+  "sensitivity_recall_positive": 0.5333333333333333,
+  "sensitivity_wilson_95ci": [
+    0.30116980025498397,
+    0.7519046463426261
+  ],
+  "specificity_negative": 0.2,
+  "specificity_wilson_95ci": [
+    0.07047549346981563,
+    0.45185448715169363
+  ],
+  "target_gene_mention_rate": 0.9333333333333333,
+  "tn": 3,
+  "total": 30,
+  "tp": 8,
+  "unknown": 14,
+  "unknown_negative": 9,
+  "unknown_positive": 5
+}

@@ -1,0 +1,205 @@
+{
+  "status": "complete_for_scored_fields",
+  "questions": 100,
+  "reviewers": 2,
+  "systems": [
+    "PharmKGPT Full KG",
+    "PharmKGPT Vanilla RAG"
+  ],
+  "answer_level_ratings": 400,
+  "generator_model_type": "DeepSeek-R1-API",
+  "effective_api_model_default": "deepseek-chat",
+  "bootstrap": {
+    "unit": "question_id",
+    "samples": 100000,
+    "seed": 20260804
+  },
+  "model_metrics": {
+    "PharmKGPT Full KG": {
+      "reviewer_ratings": 200,
+      "mean_correctness_0_2": 1.715,
+      "fully_correct_count": 156,
+      "fully_correct_rate": 0.78,
+      "at_least_partly_correct_count": 187,
+      "at_least_partly_correct_rate": 0.935,
+      "mean_evidence_support_0_2": 1.705,
+      "fully_supported_count": 158,
+      "fully_supported_rate": 0.79,
+      "at_least_partly_supported_count": 183,
+      "at_least_partly_supported_rate": 0.915
+    },
+    "PharmKGPT Vanilla RAG": {
+      "reviewer_ratings": 200,
+      "mean_correctness_0_2": 1.57,
+      "fully_correct_count": 142,
+      "fully_correct_rate": 0.71,
+      "at_least_partly_correct_count": 172,
+      "at_least_partly_correct_rate": 0.86,
+      "mean_evidence_support_0_2": 1.575,
+      "fully_supported_count": 144,
+      "fully_supported_rate": 0.72,
+      "at_least_partly_supported_count": 171,
+      "at_least_partly_supported_rate": 0.855
+    }
+  },
+  "paired_metrics": {
+    "mean_correctness_0_2": {
+      "full": 1.715,
+      "vanilla": 1.57,
+      "delta_full_minus_vanilla": 0.145,
+      "paired_bootstrap_95ci": [
+        0.05,
+        0.25
+      ],
+      "sign_flip_p": 0.0055389404296875,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 524288,
+      "full_better_questions": 14,
+      "same_questions": 81,
+      "vanilla_better_questions": 5
+    },
+    "fully_correct_rate": {
+      "full": 0.78,
+      "vanilla": 0.71,
+      "delta_full_minus_vanilla": 0.07,
+      "paired_bootstrap_95ci": [
+        0.015,
+        0.13
+      ],
+      "sign_flip_p": 0.02727508544921875,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 262144,
+      "full_better_questions": 13,
+      "same_questions": 82,
+      "vanilla_better_questions": 5
+    },
+    "at_least_partly_correct_rate": {
+      "full": 0.935,
+      "vanilla": 0.86,
+      "delta_full_minus_vanilla": 0.075,
+      "paired_bootstrap_95ci": [
+        0.03,
+        0.13
+      ],
+      "sign_flip_p": 0.0078125,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 256,
+      "full_better_questions": 8,
+      "same_questions": 92,
+      "vanilla_better_questions": 0
+    },
+    "mean_evidence_support_0_2": {
+      "full": 1.705,
+      "vanilla": 1.575,
+      "delta_full_minus_vanilla": 0.13,
+      "paired_bootstrap_95ci": [
+        0.035,
+        0.24
+      ],
+      "sign_flip_p": 0.01568603515625,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 131072,
+      "full_better_questions": 12,
+      "same_questions": 83,
+      "vanilla_better_questions": 5
+    },
+    "fully_supported_rate": {
+      "full": 0.79,
+      "vanilla": 0.72,
+      "delta_full_minus_vanilla": 0.07,
+      "paired_bootstrap_95ci": [
+        0.02,
+        0.13
+      ],
+      "sign_flip_p": 0.022491455078125,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 65536,
+      "full_better_questions": 12,
+      "same_questions": 84,
+      "vanilla_better_questions": 4
+    },
+    "at_least_partly_supported_rate": {
+      "full": 0.915,
+      "vanilla": 0.855,
+      "delta_full_minus_vanilla": 0.06,
+      "paired_bootstrap_95ci": [
+        0.005,
+        0.12
+      ],
+      "sign_flip_p": 0.0546875,
+      "sign_flip_method": "exact",
+      "sign_flip_samples": 1024,
+      "full_better_questions": 8,
+      "same_questions": 90,
+      "vanilla_better_questions": 2
+    }
+  },
+  "preference": {
+    "reviewer_preferences": 200,
+    "full_wins": 49,
+    "vanilla_wins": 24,
+    "ties": 127,
+    "full_win_rate_all_ratings": 0.245,
+    "vanilla_win_rate_all_ratings": 0.12,
+    "tie_rate": 0.635,
+    "full_share_among_non_ties": 0.6712328767123288,
+    "full_share_among_non_ties_bootstrap_95ci": [
+      0.5466666666666666,
+      0.7887323943661971
+    ],
+    "full_minus_vanilla_preference_rate": 0.125,
+    "full_minus_vanilla_bootstrap_95ci": [
+      0.03,
+      0.22
+    ],
+    "sign_flip_p": 0.013909930450347748,
+    "sign_flip_method": "monte_carlo",
+    "sign_flip_samples": 200000
+  },
+  "inter_rater_agreement": {
+    "correctness": {
+      "answer_pairs": 200,
+      "exact_agreement": 0.8,
+      "unweighted_cohen_kappa": 0.5149751424760519,
+      "quadratic_weighted_cohen_kappa": 0.7531289470662533
+    },
+    "evidence_support": {
+      "answer_pairs": 200,
+      "exact_agreement": 0.8,
+      "unweighted_cohen_kappa": 0.5005618678986141,
+      "quadratic_weighted_cohen_kappa": 0.7507045306741816
+    },
+    "preference": {
+      "question_pairs": 100,
+      "exact_agreement": 0.66,
+      "unweighted_cohen_kappa": 0.3736182756079588
+    }
+  },
+  "automatic_retrieval_and_citation": {
+    "PharmKGPT Full KG": {
+      "questions": 100,
+      "exact_source_recall_at_1": 0.82,
+      "exact_source_recall_at_2": 0.84,
+      "exact_source_recall_at_5": 0.86,
+      "exact_source_recall_at_10": 0.91,
+      "answer_cited_gold_pmid_rate": 0.82
+    },
+    "PharmKGPT Vanilla RAG": {
+      "questions": 100,
+      "exact_source_recall_at_1": 0.75,
+      "exact_source_recall_at_2": 0.8,
+      "exact_source_recall_at_5": 0.8,
+      "exact_source_recall_at_10": 0.8,
+      "answer_cited_gold_pmid_rate": 0.74
+    }
+  },
+  "unscored_fields": [
+    "human_citation_validity_0_1",
+    "human_hallucination_yes_no"
+  ],
+  "interpretation_limits": [
+    "The Vanilla variant disables KG retrieval, graph filtering, and reranking on the mixed entity/document index; it is not a clean document-only semantic RAG baseline.",
+    "Answer-cited-gold-PMID rate is automatic citation presence, not human citation validity.",
+    "The score tables contain no adjudicated consensus labels."
+  ]
+}

@@ -1,0 +1,16 @@
+Metric,DeepSeek (closed-book),DeepSeek + PharmKGPT,DeepSeek + Gold
+Evaluation,PubMedQA PQA-L expert-labeled subset,PubMedQA PQA-L expert-labeled subset,PubMedQA PQA-L expert-labeled subset
+Evidence setting,No external evidence,Frozen PharmKGPT Top-10 retrieval,Oracle PubMedQA gold context
+Questions evaluated,1000,1000,1000
+Source articles successfully indexed as KGs,N/A,995,N/A
+KG construction/parsing failures,N/A,5,N/A
+Correct answers,144,540,644
+Answer accuracy,14.4%,54.0%,64.4%
+Answer accuracy 95% CI,12.36–16.71%,50.90–57.07%,61.38–67.31%
+Macro-F1,11.44%,50.89%,57.37%
+Unknown outputs,0,0,0
+Exact-source Recall@1,N/A,63.5%,100.0% (oracle-supplied)
+Exact-source Recall@2,N/A,73.9%,100.0% (oracle-supplied)
+Exact-source Recall@5,N/A,84.5%,100.0% (oracle-supplied)
+Exact-source Recall@10,N/A,88.2%,100.0% (oracle-supplied)
+MRR,N/A,0.7221,1.0000 (oracle-supplied)

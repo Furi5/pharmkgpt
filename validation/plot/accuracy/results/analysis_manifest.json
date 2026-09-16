@@ -1,0 +1,48 @@
+{
+  "source": {
+    "path": "effect_size/data/all_answer.csv",
+    "sha256": "7acb70260cfc2a90540b006269eca7a1794a64a8b82244688ac679e95705794d"
+  },
+  "significance_sources": [
+    {
+      "path": "effect_size/results/canonical_effect_sizes_overall.csv",
+      "sha256": "88ca32f6866e9bc2c4a6a223b26793392e845b2e3958f23a5b4c7785af15e0b0"
+    },
+    {
+      "path": "effect_size/results/canonical_effect_sizes_by_domain.csv",
+      "sha256": "ca34ca6643f1bbe816cc373690e8f3dbf8e255dd2c21d7e715ab533d281757bc"
+    }
+  ],
+  "n_questions": 1045,
+  "domain_counts": {
+    "Overall": 1045,
+    "Clinical": 233,
+    "Genetic": 247,
+    "Cell": 213,
+    "Pathway": 230,
+    "Metabolism": 122
+  },
+  "methods": [
+    "Qwen3-32B",
+    "DeepSeek-R1-32B",
+    "LLaMA2-13B",
+    "LLaMA3-8B",
+    "Gemma3-27B",
+    "LightRAG",
+    "SemanticRAG",
+    "HippoRAG 2",
+    "PharmkGPT"
+  ],
+  "runs_per_method": 5,
+  "accuracy_rule": "missing and invalid responses counted as incorrect",
+  "error_bar": "sample SD of five run-level accuracies",
+  "significance_rule": "** if Holm-adjusted paired p < 0.01; otherwise ns",
+  "output": {
+    "path": "plot/accuracy/results/domain_accuracy_summary.csv",
+    "sha256": "a6330fb04eee12bb824a4eeec3fff439f559f78fbb6522d844a6139cb681b233"
+  },
+  "significance_output": {
+    "path": "plot/accuracy/results/holm_significance_summary.csv",
+    "sha256": "586b89c4735ee409ae2a95d18f8a64d3a13c2eb4571baaf3af54b7bddb4a80a2"
+  }
+}
